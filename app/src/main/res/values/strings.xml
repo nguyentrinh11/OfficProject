@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">OfficProject</string>
+    <!--    Font Roboto-->
+    <string name="font_roboto">Roboto-Thin.ttf</string>
+    <string name="font_roboto_light">Roboto-Light.ttf</string>
+    <string name="font_ita">Roboto-ThinItalic.ttf</string>
+    <string name="font_italic">Roboto-Italic.ttf</string>
+    <string name="font_helveticaneue">helveticaneue.ttf</string>
+    <string name="font_helveticaneue_light">helveticaneuelight.ttf</string>
+    <string name="font_helveticaneue_medium">helveticaneuemedium.ttf</string>
+    <string name="font_open_san_semibold">OpenSans-Semibold.ttf</string>
+    <string name="font_open_san_light">OpenSans-Light.ttf</string>
+
+    <!-- Screen Login-->
+    <string name="login_edt_username">Username/Email</string>
+    <string name="login_edt_password">Password</string>
+    <string name="login_tv_error_login">Incrorrect username or password</string>
+    <string name="login_tv_sign_up"><u>Sign up now</u></string>
+    <string name="login_tv_forgot_password">Forgot your password ?</string>
+    <string name="login_btn_login">Sign in</string>
+    <string name="login_field_non_data">Please input your information</string>
+    <string name="login_error_password">Password at least 6 letter</string>
+    <string name="login_success">Login success</string>
+    <string name="login_error_4xx">Description of error</string>
+
+
+    <!--  Screen Sign up -->
+    <string name="sign_up_tv_cancel">Cancel</string>
+    <string name="sign_up_tv_title_sign_up">Sign up</string>
+    <string name="sign_up_edt_email">Email</string>
+    <string name="sign_up_edt_password">Password</string>
+    <string name="sign_up_edt_confirm_password">Confirm password</string>
+    <string name="sign_up_edt_company">Company</string>
+    <string name="sign_up_btn_sign_up">Sign up</string>
+    <string name="sign_up_succes">Sign up success</string>
+
+    <!--  Screen NavigationView -->
+    <string name="on_back_pressed">Press Back again to Exit.</string>
+    <string name="menu_contacts">All Contacts</string>
+    <string name="menu_users">Users</string>
+    <string name="menu_tags">Tags</string>
+    <string name="menu_groups">Groups</string>
+    <string name="menu_switch_company">Switch company</string>
+
+
+    <!--  Screen Splash List company -->
+    <string name="splash_log_out_success">Logout is success</string>
+    <string name="splash_log_out_failure">Logout is failure</string>
+    <string name="title_activity_tab_layout">TabLayout</string>
+
+
+    <!-- Screen Favorite-->
+    <string name="screen_favorite">Favotite</string>
+
+    <!-- Screen Forgot Password-->
+    <string name="forgot_password_information">Please enter your email address to get instructions</string>
+    <string name="forgot_password_edt_hint">Email</string>
+    <string name="forgot_password_btn_send_email">Send me reset instruction</string>
+    <string name="forgot_password_tv_sign_in">Sign in</string>
+    <string name="forgot_password_success">Please check your email to reset password</string>
+    <string name="forgot_password_error">User not found</string>
+
+    <!--  Screen Navigation View-->
+    <string name="navtigation_view_item_company">Offic</string>
+    <string name="navtigation_view_item_avatar_user_name">Van Trinh</string>
+    <string-array name="content">
+        <item>Contacts</item>
+        <item>Users</item>
+        <item>Tags</item>
+        <item>Groups</item>
+        <item>Settings</item>
+        <item>Switch company</item>
+        <item>Log out</item>
+    </string-array>
+</resources>

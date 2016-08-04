@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#f44336</color>
+    <color name="bg_edit_text">#f44336</color>
+
+    <!-- Screen Login-->
+    <color name="tv_error_login">#f44336</color>
+    <color name="view">#BDBDBD</color>
+    <color name="login_tv_btn_login">#FAFAFA</color>
+    <color name="login_tv_forgot_password">#FAFAFA</color>
+    <color name="login_tv_sign_up">#FAFAFA</color>
+
+    <!-- Screen Forgot Password -->
+    <color name="forgot_password_text_color">#FAFAFA</color>
+    <color name="navigation_view_item_avatar_tv_username">#ffffff</color>
+
+    <!-- Screen Navigation View -->
+    <color name="navigation_bg_listview">#1d1d1d</color>
+    <color name="navigation_bg_item_avatar">#323232</color>
+</resources>

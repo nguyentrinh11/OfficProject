@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fm_logo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/splash_fm_logo_height"
+        android:background="@color/bg_edit_text">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_logo_login" />
+    </FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_list_company"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fm_logo"
+        android:background="#EEEEEE" />
+
+    <offic.htk.com.officproject.views.CustomFontButton
+        android:id="@+id/btn_sign_out"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/splash_btn_sign_out_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/custom_edit_text"
+        android:gravity="center"
+        android:text="Sign out"
+        android:textColor="#f44336"
+        android:textSize="@dimen/splash_btn_sign_out_text_size"
+        font:font="@string/font_helveticaneue_light" />
+
+
+</RelativeLayout>
