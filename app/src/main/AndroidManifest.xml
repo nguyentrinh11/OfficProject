@@ -32,6 +32,11 @@
             android:name=".activitis.ForgotPasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity
+            android:name=".activitis.AddNewCompanyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity android:name=".activitis.AddTypeActivity"></activity>
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -266,5 +267,15 @@ public class FragmentContacts extends BaseFragment {
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_contacts;
+    }
+
+    private void createDialog() {
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        final View yourCustomView = inflater.inflate(R.layout.dialog_add_new, null);
+
+//        final TextView etName = (EditText) yourCustomView.findViewById(R.id.EditZip);
+        final AlertDialog dialog = new AlertDialog.Builder(getContext())
+                .setView(yourCustomView).create();
+        dialog.show();
     }
 }
