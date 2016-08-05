@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#f44336">
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="@string/sign_up_tv_cancel"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            font:font="@string/font_helveticaneue" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_title_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Add new company"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            font:font="@string/font_helveticaneue" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="Done"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            font:font="@string/font_helveticaneue" />
+    </FrameLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/custom_edit_text"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/fm_add_avatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp">
+
+                    <ImageView
+                        android:id="@+id/img_add_avatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_add_avatar" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Add avatar"
+                        android:textColor="#4FC3F7"
+                        android:textSize="13sp"
+                        font:font="@string/font_helveticaneue_light" />
+                </FrameLayout>
+
+                <offic.htk.com.officproject.views.CustomFontEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:hint="Name"
+                    android:textSize="15sp"
+                    font:font="@string/font_helveticaneue" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_add_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/custom_edit_text"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ln_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:onClick="onAddNewClicked"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_add_phone" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:text="Add phone"
+                        android:textColor="#4FC3F7"
+                        android:textSize="15sp"
+                        font:font="@string/font_helveticaneue" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:background="#BDBDBD" />
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:text="CUSTOM FIELDS:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/custom_edit_text"
+                android:orientation="vertical">
+
+                <offic.htk.com.officproject.views.CustomFontEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:hint="Custom ID"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/ic_cusor_text"
+                    android:textSize="15sp"
+                    font:font="@string/font_helveticaneue" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#BDBDBD" />
+
+                <offic.htk.com.officproject.views.CustomFontEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:hint="Birthday"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/ic_cusor_text"
+                    android:textSize="15sp"
+                    font:font="@string/font_helveticaneue" />
+            </LinearLayout>
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:text="SOCIAL NETWORKS:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/custom_edit_text"
+                android:orientation="vertical">
+
+                <offic.htk.com.officproject.views.CustomFontEditText
+                    android:id="@+id/edt_email_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:hint="Facebook"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/ic_cusor_text"
+                    android:textSize="15sp"
+                    font:font="@string/font_helveticaneue" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#BDBDBD" />
+
+                <offic.htk.com.officproject.views.CustomFontEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:hint="LinkedIn"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/ic_cusor_text"
+                    android:textSize="15sp"
+                    font:font="@string/font_helveticaneue" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#BDBDBD" />
+
+                <offic.htk.com.officproject.views.CustomFontEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@null"
+                    android:hint="Switter"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/ic_cusor_text"
+                    android:textSize="15sp"
+                    font:font="@string/font_helveticaneue" />
+            </LinearLayout>
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:text="BACKGROUND INFO:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/custom_edit_text"
+                android:orientation="vertical">
+
+                <offic.htk.com.officproject.views.CustomFontEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@null"
+                    android:hint="Background info"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/ic_cusor_text"
+                    android:textSize="15sp"
+                    font:font="@string/font_helveticaneue" />
+            </LinearLayout>
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:text="PERMISSION:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/custom_edit_text"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <offic.htk.com.officproject.views.CustomFontTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Who can see this info ?" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_selected_permission" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="Everyone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_unselected_permission" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="Just me" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_unselected_permission" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="Me, plus this group" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_unselected_permission" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="Me, plus these people" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:text="TAGS:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/custom_edit_text"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
