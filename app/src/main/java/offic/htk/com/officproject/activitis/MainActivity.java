@@ -268,5 +268,8 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
     public FragmentTabHost getFragmentTabHost() {
         return (FragmentTabHost) findViewById(android.R.id.tabhost);
     }
+    public Toolbar getToolbar() {
+        return (Toolbar) findViewById(R.id.toolbar);
+    }
 
 }
