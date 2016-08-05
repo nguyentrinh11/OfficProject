@@ -228,6 +228,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
 
     @Override
     public void onPanelClosed(View panel) {
+
     }
 
     @Override

@@ -81,13 +81,11 @@ public class FragmentContacts extends BaseFragment {
         Log.d("contacts","tabhost + toolbar " + toolbar.getHeight());
         // layout tags
         ll_tags = (LinearLayout) view.findViewById(R.id.ll_tags);
-
         reyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
 
         popUpWindow();
         searchLayoutAnimation();
         setUpRecyclerView();
-
         return view;
     }
 
