@@ -39,7 +39,6 @@
     <dimen name="splash_img_move_width">20dp</dimen>
     <dimen name="splash_img_move_margin_right">5dp</dimen>
 
-
     <!-- dimension Splash screen -->
     <dimen name="forgot_password_text_size">15sp</dimen>
 
@@ -54,4 +53,27 @@
     <dimen name="navigation_view_item_details_ln_height">40dp</dimen>
     <dimen name="navigation_view_item_details_img_width">20dp</dimen>
     <dimen name="navigation_view_details_text_size">14sp</dimen>
+
+    <!-- all contacts screen -->
+    <dimen name="all_contacts_circle_image_width">40dp</dimen>
+    <dimen name="all_contacts_circle_image_height">40dp</dimen>
+    <dimen name="all_contacts_user_name_text_size">16sp</dimen>
+    <dimen name="all_contacts_user_name_text_phone_number">14sp</dimen>
+    <dimen name="all_contacts_click_favorite_text_size">15sp</dimen>
+    <dimen name="all_contacts_lock_image_padding_top">5dp</dimen>
+    <dimen name="all_contacts_swipe_text_margin_top">5dp</dimen>
+    <dimen name="all_contacts_swipe_image_width">20dp</dimen>
+    <dimen name="all_contact_swipe_image_height">20dp</dimen>
+    <dimen name="all_contacts_popup_set_org_image_width">15dp</dimen>
+    <dimen name="all_contacts_popup_set_org_image_height">25dp</dimen>
+    <dimen name="all_contacts_popup_set_org_text_margin_left">8dp</dimen>
+    <dimen name="all_contacts_popup_set_org_text_size">12sp</dimen>
+    <dimen name="all_contacts_popup_set_org_pace">15dp</dimen>
+    <dimen name="all_contacts_popup_set_org_width">100dp</dimen>
+    <dimen name="all_contacts_popup_set_org_margin_top">10dp</dimen>
+    <dimen name="all_contacts_popup_set_org_border_width">3px</dimen>
+    <dimen name="all_contacts_popup_set_org_border_radius">3dp</dimen>
+    <dimen name="all_contacts_search_cancel">14sp</dimen>
+
+
 </resources>
