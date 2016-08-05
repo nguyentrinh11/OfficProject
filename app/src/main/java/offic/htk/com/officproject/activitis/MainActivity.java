@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
@@ -52,18 +55,19 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
     private FrameLayout fmMain;
     private FragmentTabHost mTabHost;
     private SessionManager sessionManager;
-    private String token;
+    private String token, username;
     private String[] listName;
 
     @Override
     protected void onCreate() {
         sessionManager = new SessionManager(MainActivity.this);
         token = new SessionManager(this).getUserDetails().get(SessionManager.KEY_TOKEN);
+        username = new SessionManager(this).getUserDetails().get(SessionManager.KEY_USERNAME);
         Log.d(TAG, "token " + token);
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
-        userInfo.setUsername("Van Trinh");
+        userInfo.setUsername(username);
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), R.id.main_list);
         mTabHost.addTab(
@@ -77,9 +81,11 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
             public void onTabChanged(String tabId) {
                 if ("tab1".equals(tabId)) {
                     replaceFragment(R.id.main_list, new FragmentContacts(), false);
+                    tvDetails.setText("All Contacts");
                 }
                 if ("tab2".equals(tabId)) {
                     replaceFragment(R.id.main_list, new FragmentFavorite(), false);
+                    tvDetails.setText("Favorite");
                 }
             }
         });
@@ -217,6 +223,26 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_add_info, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_add_new:
+                Intent intent = new Intent(MainActivity.this, AddNewCompanyActivity.class);
+//                intent.putExtra("type", "1");
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onPanelSlide(View panel, float slideOffset) {
