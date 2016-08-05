@@ -12,6 +12,7 @@ import offic.htk.com.officproject.base.BaseFragment;
  */
 public class FragmentGroups extends BaseFragment {
     private FragmentTabHost fragmentTabHost;
+
     @Override
     protected void onCreate() {
         MainActivity mainActivity = (MainActivity) getActivity();
@@ -26,6 +27,6 @@ public class FragmentGroups extends BaseFragment {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.fragment_groups;
+        return R.layout.fragment_create_your_first_groups;
     }
 }
