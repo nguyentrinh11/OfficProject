@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 
 import java.util.HashMap;
 
+import offic.htk.com.officproject.activitis.AddNewCompanyActivity;
 import offic.htk.com.officproject.activitis.MainActivity;
 import offic.htk.com.officproject.activitis.SplashActivity;
 
