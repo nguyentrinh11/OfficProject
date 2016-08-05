@@ -1,6 +1,8 @@
 package offic.htk.com.officproject.fragments;
 
 import android.support.v4.app.FragmentTabHost;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import offic.htk.com.officproject.R;
@@ -12,6 +14,7 @@ import offic.htk.com.officproject.base.BaseFragment;
  */
 public class FragmentContacts extends BaseFragment {
     private FragmentTabHost fragmentTabHost;
+
     @Override
     protected void onCreate() {
         MainActivity mainActivity = (MainActivity) getActivity();
@@ -19,7 +22,6 @@ public class FragmentContacts extends BaseFragment {
         fragmentTabHost.setVisibility(View.VISIBLE);
 
     }
-
 
 
     @Override
@@ -30,5 +32,15 @@ public class FragmentContacts extends BaseFragment {
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_contacts;
+    }
+
+    private void createDialog() {
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        final View yourCustomView = inflater.inflate(R.layout.dialog_add_new, null);
+
+//        final TextView etName = (EditText) yourCustomView.findViewById(R.id.EditZip);
+        final AlertDialog dialog = new AlertDialog.Builder(getContext())
+                .setView(yourCustomView).create();
+        dialog.show();
     }
 }
