@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="offic.htk.com.officproject.activitis.AddTagActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#f44336">
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_cancel_add_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/activity_add_tag_tv_cancel_margin_left_right"
+            android:layout_marginStart="@dimen/activity_add_tag_tv_cancel_margin_left_right"
+            android:gravity="center"
+            android:text="@string/sign_up_tv_cancel"
+            android:textColor="@color/activity_add_tag_tv"
+            android:textSize="@dimen/activity_add_tag_tv_text_size"
+            font:font="@string/font_helveticaneue" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_title_add_tags"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/activity_add_tag_tv_title"
+            android:textColor="@color/activity_add_tag_tv"
+            android:textSize="@dimen/activity_add_tag_tv_text_size"
+            android:textStyle="bold"
+            font:font="@string/font_helveticaneue" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_done_add_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginEnd="@dimen/activity_add_tag_tv_cancel_margin_left_right"
+            android:layout_marginRight="@dimen/activity_add_tag_tv_cancel_margin_left_right"
+            android:gravity="center"
+            android:text="@string/activity_add_tag_tv_done"
+            android:textColor="@color/activity_add_tag_tv"
+            android:textSize="@dimen/activity_add_tag_tv_text_size"
+            font:font="@string/font_helveticaneue" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_add_tag_ln_height"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <offic.htk.com.officproject.views.CustomFontEditText
+            android:id="@+id/edt_add_tags"
+            android:layout_width="@dimen/activity_add_tag_edt_add_tags_width"
+            android:layout_height="@dimen/activity_add_tag_edt_add_tags_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_add_tag_edt_add_tags_margin"
+            android:layout_marginStart="@dimen/activity_add_tag_edt_add_tags_margin"
+            android:background="@drawable/shape_add_tags"
+            android:hint="@string/activity_edt_add_tags"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textColor="@color/activity_add_edt_add_tags"
+            android:textCursorDrawable="@drawable/ic_cusor_text"
+            android:textSize="@dimen/activity_add_tag_text_size"
+            font:font="@string/font_helveticaneue_medium" />
+
+        <LinearLayout
+            android:id="@+id/ln_add_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_add_tag_tv_cancel_margin_left_right"
+            android:layout_marginStart="@dimen/activity_add_tag_tv_cancel_margin_left_right"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_add_phone" />
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/activity_edt_add_tags"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/activity_add_tag_text_size"
+                font:font="@string/font_helveticaneue" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <offic.htk.com.officproject.TagView.TagView
+            android:id="@+id/tagview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_add_tag_tag_view_margin"
+            app:lineMargin="5dp"
+            app:tagMargin="3dp"
+            app:textPaddingBottom="@dimen/activity_add_tag_tag_view_padding"
+            app:textPaddingLeft="@dimen/activity_add_tag_tv_cancel_margin_left_right"
+            app:textPaddingRight="@dimen/activity_add_tag_tv_cancel_margin_left_right"
+            app:textPaddingTop="@dimen/activity_add_tag_tag_view_padding" />
+    </ScrollView>
+
+
+</LinearLayout>

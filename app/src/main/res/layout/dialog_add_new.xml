@@ -8,20 +8,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="@dimen/dialog_add_new_height"
         android:background="@drawable/custom_edit_text"
         android:orientation="vertical">
 
         <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_add_new_person"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/tv_add_new_person_height"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Add a new person"
+            android:text="@string/tv_add_new_person"
             android:textColor="#157efb"
-            android:textSize="15sp"
+            android:textSize="@dimen/tv_dialog_add_new_contacts"
             android:textStyle="bold"
             font:font="@string/font_helveticaneue" />
 
@@ -31,29 +30,33 @@
             android:background="#BDBDBD" />
 
         <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_add_new_company"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Add a new company"
             android:textColor="#157efb"
-            android:textSize="15sp"
+            android:textSize="@dimen/tv_dialog_add_new_contacts"
             android:textStyle="bold"
             font:font="@string/font_helveticaneue" />
     </LinearLayout>
 
-    <offic.htk.com.officproject.views.CustomFontTextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="1dp"
+        android:background="#BDBDBD" />
+
+    <offic.htk.com.officproject.views.CustomFontTextView
+        android:id="@+id/tv_cancel_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tv_dialog_cancel_height"
         android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/custom_edit_text"
         android:gravity="center"
         android:text="Cancel"
         android:textColor="#157efb"
-        android:textSize="16sp"
+        android:textSize="@dimen/tv_dialog_cancel_text_size"
         android:textStyle="bold"
         font:font="@string/font_helveticaneue_medium" />
 </LinearLayout>

@@ -34,5 +34,10 @@
     <color name="background_gray">#EEEEEE</color>
     <color name="line_divided_dark_gray">#BDBDBD</color>
 
+    <!-- Screen Add New Tag -->
+    <color name="activity_add_tag_tv">#FAFAFA</color>
+    <color name="activity_add_edt_add_tags">#1d1d1d</color>
+    <color name="add_contacts_text_color_blue">#4FC3F7</color>
+
 
 </resources>

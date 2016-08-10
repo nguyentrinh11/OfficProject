@@ -75,18 +75,35 @@
         <item>Log out</item>
     </string-array>
 
+
     <string-array name="categories">
         <item>home</item>
         <item>work</item>
         <item>mobile</item>
         <item>other</item>
     </string-array>
+
     <!-- screen all contacts -->
 
     <string name="contact_swip_delete">Delete</string>
     <string name="contact_swip_detail">Detail</string>
     <string name="contact_swip_favorite">Favorite</string>
     <string name="all_contacts_search_cancel">cancel</string>
+    <string name="error_add_tags">Please enter new tag !!!</string>
+
+
+    <!-- Screen Add Tags-->
+    <string name="activity_add_tag_tv_title">Add Tags</string>
+    <string name="activity_add_tag_tv_done">Done</string>
+    <string name="activity_edt_add_tags">Add Tag</string>
+
+    <!-- Screen Dialog Add Contacts-->
+    <string name="tv_add_new_person">Add a new person</string>
+
+    <!-- Screen Fragment Create Your First Groups-->
+    <string name="btn_create_your_first_groups">Create your first group</string>
+    <string name="tv_title_edit_profile">Edit</string>
+    <string name="tv_done_profile">Done</string>
 
     <!-- screen add new person -->
     <string name="add_new_person_last_name_hint">Last name</string>
@@ -99,6 +116,13 @@
     <string name="add_contacts_background_info">BACKGROUND INFO:</string>
     <string name="add_contacts_permission">PERMISSION:</string>
     <string name="add_contacts_tags">TAGS:</string>
+
+    <!-- Screen Activity Edit Profile-->
+    <string name="activity_edit_profile_text_email">Email</string>
+    <string name="activity_edit_profile_text_user_name">Username</string>
+    <string name="activity_edit_profile_text_password">Password</string>
+    <string name="activity_edit_profile_text_confirm_pass">Confirm password</string>
+>>>>>>> 371a4adcb3e6ed392ae19e8ec109f9102b6b08f6
 
 
 </resources>

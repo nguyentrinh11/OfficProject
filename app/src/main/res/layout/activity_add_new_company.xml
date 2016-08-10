@@ -26,7 +26,7 @@
             font:font="@string/font_helveticaneue" />
 
         <offic.htk.com.officproject.views.CustomFontTextView
-            android:id="@+id/tv_title_sign_up"
+            android:id="@+id/tv_title_add_new_company"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"

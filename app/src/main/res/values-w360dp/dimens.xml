@@ -1,16 +1,21 @@
 <resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
     <!-- dimension Login screen -->
     <dimen name="login_view_margin_left">20dp</dimen>
     <dimen name="login_view_margin_right">20dp</dimen>
     <dimen name="login_img_logo_height">60dp</dimen>
     <dimen name="login_ln_input_info_margin_top">10dp</dimen>
     <dimen name="login_ln_input_info_margin_bottom">6.7dp</dimen>
-    <dimen name="login_edt_input_info_text_size">15sp</dimen>
+    <dimen name="login_edt_input_info_text_size">14sp</dimen>
     <dimen name="login_ln_input_info_height">60dp</dimen>
     <dimen name="login_ln_input_info_corner">1dp</dimen>
     <dimen name="login_btn_sign_in_margin_top">19.3dp</dimen>
     <dimen name="login_btn_sign_in_height">50dp</dimen>
-    <dimen name="login_btn_sign_in_text_size">17sp</dimen>
+    <dimen name="login_btn_sign_in_text_size">16sp</dimen>
     <dimen name="login_tv_forgot_password_text_size">10.7sp</dimen>
     <dimen name="login_tv_forgot_password_margin_top">25dp</dimen>
     <dimen name="login_tv_error_text_size">9.3sp</dimen>
@@ -23,7 +28,7 @@
     <!-- dimension Splash screen -->
     <dimen name="splash_fm_logo_height">120dp</dimen>
     <dimen name="splash_btn_sign_out_height">50dp</dimen>
-    <dimen name="splash_btn_sign_out_text_size">18sp</dimen>
+    <dimen name="splash_btn_sign_out_text_size">17sp</dimen>
     <dimen name="splash_ln_item_company_height">80dp</dimen>
     <dimen name="splash_ln_img_move_height">30dp</dimen>
     <dimen name="splash_img_company_width">50dp</dimen>
@@ -34,30 +39,107 @@
     <dimen name="splash_img_move_width">20dp</dimen>
     <dimen name="splash_img_move_margin_right">5dp</dimen>
 
-
     <!-- dimension Splash screen -->
     <dimen name="forgot_password_text_size">15sp</dimen>
 
     <!-- Screen navigaitonview -->
+    <dimen name="navigation_view_item_company_ln_height">18dp</dimen>
+    <dimen name="navigation_view_item_company_tv_size">11sp</dimen>
+    <dimen name="navigation_view_item_avatar_height">60dp</dimen>
+    <dimen name="navigaiton_view_item_avatar_image_width">50dp</dimen>
+    <dimen name="navigaiton_view_item_avatar_image_height">50dp</dimen>
+    <dimen name="navigation_view_item_avatar_tv_size">13sp</dimen>
+    <dimen name="navigaiton_view_item_avatar_name_margin_left">20dp</dimen>
+    <dimen name="navigation_view_item_details_ln_height">40dp</dimen>
+    <dimen name="navigation_view_item_details_img_width">20dp</dimen>
+    <dimen name="navigation_view_details_text_size">13sp</dimen>
+
+    <!-- all contacts screen -->
     <dimen name="all_contacts_circle_image_width">40dp</dimen>
     <dimen name="all_contacts_circle_image_height">40dp</dimen>
-    <dimen name="all_contacts_user_name_text_size">16sp</dimen>
-    <dimen name="all_contacts_user_name_text_phone_number">14sp</dimen>
-    <dimen name="all_contacts_click_favorite_text_size">15sp</dimen>
+    <dimen name="all_contacts_user_name_text_size">15sp</dimen>
+    <dimen name="all_contacts_user_name_text_phone_number">13sp</dimen>
+    <dimen name="all_contacts_click_favorite_text_size">14sp</dimen>
     <dimen name="all_contacts_lock_image_padding_top">5dp</dimen>
     <dimen name="all_contacts_swipe_text_margin_top">5dp</dimen>
     <dimen name="all_contacts_swipe_image_width">20dp</dimen>
     <dimen name="all_contact_swipe_image_height">20dp</dimen>
     <dimen name="all_contacts_popup_set_org_image_width">15dp</dimen>
-    <dimen name="all_contacts_popup_set_org_image_height">20dp</dimen>
+    <dimen name="all_contacts_popup_set_org_image_height">25dp</dimen>
     <dimen name="all_contacts_popup_set_org_text_margin_left">8dp</dimen>
-    <dimen name="all_contacts_popup_set_org_text_size">12sp</dimen>
+    <dimen name="all_contacts_popup_set_org_text_size">11sp</dimen>
     <dimen name="all_contacts_popup_set_org_pace">15dp</dimen>
-    <dimen name="all_contacts_popup_set_org_width">70dp</dimen>
+    <dimen name="all_contacts_popup_set_org_width">100dp</dimen>
+    <dimen name="all_contacts_popup_set_org_margin_top">10dp</dimen>
+    <dimen name="all_contacts_popup_set_org_border_width">3px</dimen>
+    <dimen name="all_contacts_popup_set_org_border_radius">3dp</dimen>
+    <dimen name="all_contacts_search_cancel">13sp</dimen>
+
+    <!-- dimension add tag screen -->
+    <dimen name="activity_add_tag_tv_cancel_margin_left_right">10dp</dimen>
+    <dimen name="activity_add_tag_tv_text_size">15sp</dimen>
+    <dimen name="activity_add_tag_ln_height">80dp</dimen>
+    <dimen name="activity_add_tag_edt_add_tags_width">200dp</dimen>
+    <dimen name="activity_add_tag_edt_add_tags_height">30dp</dimen>
+    <dimen name="activity_add_tag_edt_add_tags_margin">15dp</dimen>
+    <dimen name="activity_add_tag_text_size">14sp</dimen>
+    <dimen name="activity_add_tag_tag_view_margin">15dp</dimen>
+    <dimen name="activity_add_tag_tag_view_padding">3dp</dimen>
+
+    <!-- dimension dialog add new contacts -->
+    <dimen name="dialog_add_new_height">100dp</dimen>
+    <dimen name="tv_add_new_person_height">50dp</dimen>
+    <dimen name="tv_dialog_add_new_contacts">15sp</dimen>
+    <dimen name="tv_dialog_cancel_height">50dp</dimen>
+    <dimen name="tv_dialog_cancel_text_size">17sp</dimen>
 
     <!-- add new contacts -->
     <dimen name="add_contacts_avatar_layout_width">50dp</dimen>
     <dimen name="add_contacts_avatar_layout_height">50dp</dimen>
+
+    <!-- dimension fragment create your first groups -->
+    <dimen name="create_your_first_groups_ln_height">100dp</dimen>
+    <dimen name="create_your_first_groups_margin_top">50dp</dimen>
+    <dimen name="create_your_first_groups_margin_left_right">15dp</dimen>
+    <dimen name="create_your_first_groups_margin_top_text">30dp</dimen>
+    <dimen name="create_your_first_groups_text_size">15sp</dimen>
+    <dimen name="btn_create_your_first_groups_text_size">16sp</dimen>
+    <dimen name="btn_create_your_first_groups_height">44dp</dimen>
+    <dimen name="btn_create_your_first_groups_margin">15dp</dimen>
+    <dimen name="btn_create_your_first_groups_margin_top">40dp</dimen>
+
+    <!-- dimension fragment profile -->
+    <dimen name="ln_info_avatar">200dp</dimen>
+    <dimen name="img_avatar_width_height">100dp</dimen>
+    <dimen name="tv_user_name_margin_top">15dp</dimen>
+    <dimen name="tv_user_name_text_size">17sp</dimen>
+    <dimen name="ln_infomation_height">200dp</dimen>
+    <dimen name="img_avatar_margin_top">30dp</dimen>
+    <dimen name="fragment_profile_text_size">15sp</dimen>
+    <dimen name="fragment_profile_view_margin_left">10dp</dimen>
+    <dimen name="fragment_profile_ln_margin">15dp</dimen>
+    <dimen name="fragment_profile_tv_text_size">14sp</dimen>
+    <dimen name="tag_view_item_height">30dp</dimen>
+    <dimen name="toolbar_tv_text_size">15sp</dimen>
+    <dimen name="toolbar_img_margin">15dp</dimen>
+
+    <!-- dimension activity edit profile -->
+    <dimen name="fm_toolbar">60dp</dimen>
+    <dimen name="tv_cancel_profile_margin">10dp</dimen>
+    <dimen name="tv_activity_edit_profile_text_size">15sp</dimen>
+    <dimen name="ln_avatar_information_height">200dp</dimen>
+    <dimen name="fm_avatar">100dp</dimen>
+    <dimen name="fm_avatar_margin">15dp</dimen>
+    <dimen name="img_avatar_edit_width_height">90dp</dimen>
+    <dimen name="img_avatar_margin_bottom">2dp</dimen>
+    <dimen name="img_upload_width_height">20dp</dimen>
+    <dimen name="fm_user_name_margin_left">15dp</dimen>
+    <dimen name="edt_info_first_name_height">50dp</dimen>
+    <dimen name="edt_info_last_name">50dp</dimen>
+    <dimen name="ln_edit_information">250dp</dimen>
+    <dimen name="ln_item_view_margin">15dp</dimen>
+    <dimen name="view_margin_left">10dp</dimen>
+>>>>>>> 371a4adcb3e6ed392ae19e8ec109f9102b6b08f6
 
 
 </resources>

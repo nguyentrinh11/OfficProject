@@ -23,6 +23,7 @@ import offic.htk.com.officproject.models.realm.IM;
 import offic.htk.com.officproject.models.realm.Phone;
 import offic.htk.com.officproject.models.realm.Website;
 import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;
+import retrofit2.http.HEAD;
 
 /**
  * Created by nguyen on 04/08/2016.
@@ -31,8 +32,7 @@ import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;
  */
 public class AddNewCompanyActivity extends BaseActivity implements View.OnClickListener {
     // view compnent
-    private LinearLayout mContainerView, lnAddPhone,lnAddEmail,lnAddIM,lnAddWebsite,lnAddAddress;
-    private View mExclusiveEmptyView;
+    private LinearLayout  lnAddPhone,lnAddEmail,lnAddIM,lnAddWebsite,lnAddAddress;
     private RecyclerView rcPhone, rcEmail, rcIM, rcWebsite, rcAddress;
 
     // array list
@@ -41,8 +41,11 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     private List<IM> mIMList = new ArrayList<>();
     private List<Website> mWebsiteList = new ArrayList<>();
     private List<Address> mAddressList = new ArrayList<>();
+    private LinearLayout mContainerView, lnAdd;
+    private View mExclusiveEmptyView;
+    private TextView tvCancel, tvDone;
 
-//    private CustomListViewAdapter mAdapter;
+    //    private CustomListViewAdapter mAdapter;
     private CustomRecyclerView mPhoneAdapter, mEmailAdapter, mIMAdapter, mWebsiteAdapter, mAddressAdapter;
 
     // id of each list
@@ -69,6 +72,12 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         lnAddIM = (LinearLayout) findViewById(R.id.ln_add_im);
         lnAddWebsite = (LinearLayout) findViewById(R.id.ln_add_website);
         lnAddAddress = (LinearLayout) findViewById(R.id.ln_add_address);
+        mContainerView = (LinearLayout) findViewById(R.id.ln_add_phone);
+
+        tvCancel = (TextView) findViewById(R.id.tv_cancel);
+        tvDone = (TextView) findViewById(R.id.tv_done);
+        tvCancel.setOnClickListener(this);
+        tvDone.setOnClickListener(this);
 
         lnAddPhone.setOnClickListener(this);
         lnAddEmail.setOnClickListener(this);
@@ -138,7 +147,7 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
 
     @Override
     protected int getLayoutRescource() {
-        return R.layout.fragment_add_new_company;
+        return R.layout.activity_add_new_company;
     }
 
     public class CustomRecyclerView extends RecyclerView.Adapter<CustomRecyclerView.CustomViewHolder>{
@@ -291,10 +300,10 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     *@param listID an int value for check what model are interactive
     *
     **/
-    public void isInputValid(CustomRecyclerView adapter, RecyclerView recyclerView, List list, int listID){
+    public void isInputValid(CustomRecyclerView adapter, RecyclerView recyclerView, List list, int listID) {
         int listSize = adapter.getItemCount();
         // value in edit text for phone, email, im, website
-        EditText edt = (EditText) recyclerView.getChildAt(listSize -1).findViewById(R.id.edt_value);
+        EditText edt = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_value);
         // value in edit text for address
         EditText edtStreet = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_street);
         EditText edtCity = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_city);
@@ -302,24 +311,24 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         EditText edtZip = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_zip);
         EditText edtCountry = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_country);
 
-        if(listSize >= 1){
-            if(listID == ADDRESS_LIST_ID){
-                if((edtStreet.getText().toString().trim().length()<1)){
+        if (listSize >= 1) {
+            if (listID == ADDRESS_LIST_ID) {
+                if ((edtStreet.getText().toString().trim().length() < 1)) {
                     edtStreet.setFocusable(true);
                     edtStreet.setError("Please enter street");
-                }else if(edtCity.getText().toString().trim().length()<1){
+                } else if (edtCity.getText().toString().trim().length() < 1) {
                     edtStreet.setFocusable(true);
                     edtCity.setError("Please enter city");
-                }else if(edtState.getText().toString().trim().length()<1){
+                } else if (edtState.getText().toString().trim().length() < 1) {
                     edtStreet.setFocusable(true);
                     edtState.setError("Please enter state");
-                }else if(edtZip.getText().toString().trim().length()<1){
+                } else if (edtZip.getText().toString().trim().length() < 1) {
                     edtStreet.setFocusable(true);
                     edtZip.setError("Please enter zip");
-                }else if(edtCountry.getText().toString().trim().length()<1){
+                } else if (edtCountry.getText().toString().trim().length() < 1) {
                     edtStreet.setFocusable(true);
                     edtCountry.setError("Please select country");
-                }else{
+                } else {
                     List<Address> addressList = list;
                     addressList.get(listSize - 1).setCdStreet(edtStreet.getText().toString());
                     addressList.get(listSize - 1).setCdCity(edtCity.getText().toString());
@@ -330,29 +339,29 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
                     addressList.add(address);
                     adapter.notifyDataSetChanged();
                 }
-            }else{
-                if (edt.getText().toString().trim().length()<1) {
+            } else {
+                if (edt.getText().toString().trim().length() < 1) {
                     edt.setError("Please Enter Item");
                 } else {
-                    if(listID == PHONE_LIST_ID ){
+                    if (listID == PHONE_LIST_ID) {
                         List<Phone> phoneList = list;
                         phoneList.get(listSize - 1).setCdValue(edt.getText().toString());
                         Phone phone = new Phone();
                         phoneList.add(phone);
                         adapter.notifyDataSetChanged();
-                    }else if(listID == EMAIL_LIST_ID){
+                    } else if (listID == EMAIL_LIST_ID) {
                         List<Email> emailList = list;
                         emailList.get(listSize - 1).setCdValue(edt.getText().toString());
                         Email email = new Email();
                         emailList.add(email);
                         adapter.notifyDataSetChanged();
-                    } else if(listID == IM_LIST_ID){
+                    } else if (listID == IM_LIST_ID) {
                         List<IM> imList = list;
                         imList.get(listSize - 1).setCdValue(edt.getText().toString());
                         IM im = new IM();
                         imList.add(im);
                         adapter.notifyDataSetChanged();
-                    }else if (listID == WEBSITE_LIST_ID) {
+                    } else if (listID == WEBSITE_LIST_ID) {
                         List<Website> webList = list;
                         webList.get(listSize - 1).setCdValue(edt.getText().toString());
                         Website wb = new Website();
@@ -361,28 +370,28 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
                     }
                 }
             }
-        }else if(listSize == 0){
-            if(listID == PHONE_LIST_ID ){
+        } else if (listSize == 0) {
+            if (listID == PHONE_LIST_ID) {
                 Phone phone = new Phone();
                 List<Phone> phoneList = list;
                 phoneList.add(phone);
                 adapter.notifyDataSetChanged();
-            }else if(listID == EMAIL_LIST_ID){
+            } else if (listID == EMAIL_LIST_ID) {
                 Email email = new Email();
                 List<Email> emailList = list;
                 emailList.add(email);
                 adapter.notifyDataSetChanged();
-            } else if(listID == IM_LIST_ID){
+            } else if (listID == IM_LIST_ID) {
                 IM im = new IM();
                 List<IM> imList = list;
                 imList.add(im);
                 adapter.notifyDataSetChanged();
-            }else if (listID == WEBSITE_LIST_ID){
+            } else if (listID == WEBSITE_LIST_ID) {
                 Website wb = new Website();
                 List<Website> webList = list;
                 webList.add(wb);
                 adapter.notifyDataSetChanged();
-            }else if(listID == ADDRESS_LIST_ID){
+            } else if (listID == ADDRESS_LIST_ID) {
                 Address address = new Address();
                 List<Address> addressList = list;
                 addressList.add(address);

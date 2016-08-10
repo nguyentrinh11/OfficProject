@@ -90,7 +90,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="Add avatar"
-                        android:textColor="@dimen/add_contacts_text_color_blue"
+                        android:textColor="@color/add_contacts_text_color_blue"
                         android:textSize="13sp"
                         font:font="@string/font_helveticaneue_light" />
                 </FrameLayout>
@@ -224,7 +224,7 @@
                         android:background="@null"
                         android:singleLine="true"
                         android:text="Add phone"
-                        android:textColor="@dimen/add_contacts_text_color_blue"
+                        android:textColor="@color/add_contacts_text_color_blue"
                         android:textSize="@dimen/add_contacts_text_size_normal_14sp"
                         font:font="@string/font_helveticaneue" />
 
@@ -266,7 +266,7 @@
                         android:background="@null"
                         android:singleLine="true"
                         android:text="Add Email"
-                        android:textColor="@dimen/add_contacts_text_color_blue"
+                        android:textColor="@color/add_contacts_text_color_blue"
                         android:textSize="@dimen/add_contacts_text_size_normal_14sp"
                         font:font="@string/font_helveticaneue" />
 
@@ -308,7 +308,7 @@
                         android:background="@null"
                         android:singleLine="true"
                         android:text="Add IM"
-                        android:textColor="@dimen/add_contacts_text_color_blue"
+                        android:textColor="@color/add_contacts_text_color_blue"
                         android:textSize="@dimen/add_contacts_text_size_normal_14sp"
                         font:font="@string/font_helveticaneue" />
 
@@ -350,7 +350,7 @@
                         android:background="@null"
                         android:singleLine="true"
                         android:text="Add Website"
-                        android:textColor="@dimen/add_contacts_text_color_blue"
+                        android:textColor="@color/add_contacts_text_color_blue"
                         android:textSize="@dimen/add_contacts_text_size_normal_14sp"
                         font:font="@string/font_helveticaneue" />
 
@@ -392,7 +392,7 @@
                         android:background="@null"
                         android:singleLine="true"
                         android:text="Add Address"
-                        android:textColor="@dimen/add_contacts_text_color_blue"
+                        android:textColor="@color/add_contacts_text_color_blue"
                         android:textSize="@dimen/add_contacts_text_size_normal_14sp"
                         font:font="@string/font_helveticaneue" />
                 </LinearLayout>

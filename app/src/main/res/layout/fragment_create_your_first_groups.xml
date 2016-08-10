@@ -3,13 +3,14 @@
     xmlns:font="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/create_your_first_groups_ln_height"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/create_your_first_groups_margin_top"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -26,26 +27,26 @@
     <offic.htk.com.officproject.views.CustomFontTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="@dimen/create_your_first_groups_margin_left_right"
+        android:layout_marginRight="@dimen/create_your_first_groups_margin_left_right"
+        android:layout_marginTop="@dimen/create_your_first_groups_margin_top_text"
         android:text="@string/fragment_create_new_group_content"
-        android:textSize="15sp"
+        android:textSize="@dimen/create_your_first_groups_text_size"
         font:font="@string/font_helveticaneue" />
 
     <offic.htk.com.officproject.views.CustomFontButton
-        android:id="@+id/btn_add_new_contacts"
+        android:id="@+id/btn_create_your_first_groups"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/btn_create_your_first_groups_height"
         android:layout_gravity="center"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="@dimen/btn_create_your_first_groups_margin"
+        android:layout_marginRight="@dimen/btn_create_your_first_groups_margin"
+        android:layout_marginTop="@dimen/btn_create_your_first_groups_margin_top"
         android:background="@drawable/custom_button"
         android:gravity="center"
-        android:text="Create your first group"
+        android:text="@string/btn_create_your_first_groups"
         android:textColor="#ffffff"
-        android:textSize="17sp"
+        android:textSize="@dimen/btn_create_your_first_groups_text_size"
         font:font="@string/font_helveticaneue_light" />
 
 </LinearLayout>

@@ -35,5 +35,10 @@
         <item name="@android:windowExitAnimation">@anim/shrink_from_topright_to_bottomleft</item>
     </style>
 
+    <style name="alphabetTextView" parent="android:Widget.TextView">
+        <item name="android:textColor">#3F51B5</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">11sp</item>
+    </style>
 
 </resources>
