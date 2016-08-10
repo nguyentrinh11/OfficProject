@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="offic.htk.com.officproject.activitis.AddNewGroupActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#f44336">
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="@string/sign_up_tv_cancel"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            font:font="@string/font_helveticaneue" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_title_add_new_company"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Add new group"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            font:font="@string/font_helveticaneue" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="Done"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            font:font="@string/font_helveticaneue" />
+    </FrameLayout>
+
+    <offic.htk.com.officproject.views.CustomFontEditText
+        android:id="@+id/edt_add_tags"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_add_tag_edt_add_tags_height"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/activity_add_tag_edt_add_tags_margin"
+        android:layout_marginRight="@dimen/activity_add_tag_edt_add_tags_margin"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_add_tags"
+        android:hint="Enter name group"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        android:textColor="@color/activity_add_edt_add_tags"
+        android:textCursorDrawable="@drawable/ic_cusor_text"
+        android:textSize="@dimen/activity_add_tag_text_size"
+        font:font="@string/font_helveticaneue_medium" />
+
+    <offic.htk.com.officproject.views.CustomFontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Example: Executives, Marketing, Sales"
+        font:font="@string/font_helveticaneue_light" />
+</LinearLayout>
