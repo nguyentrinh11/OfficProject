@@ -75,15 +75,14 @@
         <item>Log out</item>
     </string-array>
 
-<<<<<<< HEAD
-=======
+
     <string-array name="categories">
         <item>home</item>
         <item>work</item>
         <item>mobile</item>
         <item>other</item>
     </string-array>
->>>>>>> e7493ccb8cd7551776b8d37452848edf2efbd2d3
+
     <!-- screen all contacts -->
 
     <string name="contact_swip_delete">Delete</string>
