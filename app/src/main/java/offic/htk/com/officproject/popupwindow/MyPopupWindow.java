@@ -91,7 +91,6 @@ public class MyPopupWindow {
     }
 
     public void dismiss() {
-
         mWindow.dismiss();
     }
 }

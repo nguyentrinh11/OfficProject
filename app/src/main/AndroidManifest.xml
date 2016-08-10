@@ -37,6 +37,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
         <activity android:name=".activitis.AddTypeActivity" />
+        <activity android:name=".activitis.AddNewPersonActivity"></activity>
         <activity
             android:name=".activitis.AddTagActivity"
             android:screenOrientation="portrait"

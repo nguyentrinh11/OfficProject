@@ -93,6 +93,10 @@
     <dimen name="tv_dialog_cancel_height">50dp</dimen>
     <dimen name="tv_dialog_cancel_text_size">17sp</dimen>
 
+    <!-- add new contacts -->
+    <dimen name="add_contacts_avatar_layout_width">50dp</dimen>
+    <dimen name="add_contacts_avatar_layout_height">50dp</dimen>
+
     <!-- dimension fragment create your first groups -->
     <dimen name="create_your_first_groups_ln_height">100dp</dimen>
     <dimen name="create_your_first_groups_margin_top">50dp</dimen>
@@ -135,6 +139,7 @@
     <dimen name="ln_edit_information">250dp</dimen>
     <dimen name="ln_item_view_margin">15dp</dimen>
     <dimen name="view_margin_left">10dp</dimen>
+>>>>>>> 371a4adcb3e6ed392ae19e8ec109f9102b6b08f6
 
 
 </resources>

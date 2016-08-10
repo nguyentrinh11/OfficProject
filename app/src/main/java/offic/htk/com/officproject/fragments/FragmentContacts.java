@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTabHost;
-
 import android.support.v7.app.AlertDialog;
-
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -34,8 +32,6 @@ import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.util.Attributes;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import offic.htk.com.officproject.R;
@@ -46,7 +42,6 @@ import offic.htk.com.officproject.base.BaseFragment;
 import offic.htk.com.officproject.popupwindow.QuickActionItem;
 import offic.htk.com.officproject.popupwindow.QuickActionPopup;
 import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;
-import offic.htk.com.officproject.utils.Utils;
 
 /**
  * Created by nguyen on 02/08/2016.
@@ -74,8 +69,8 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void onCreate() {
-//        fragmentTabHost = mainActivity.getFragmentTabHost();
-//        fragmentTabHost.setVisibility(View.VISIBLE);
+        fragmentTabHost = mainActivity.getFragmentTabHost();
+        fragmentTabHost.setVisibility(View.VISIBLE);
 //        Log.d("contacts","tabhost + toolbar " + toolbar.getHeight());
 //        toolbar = mainActivity.getToolbar();
 //        toolbar.getHeight();
@@ -103,7 +98,6 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
         Log.d("contacts", "tabhost + toolbar " + toolbar.getHeight());
         // layout tags
         ll_tags = (LinearLayout) view.findViewById(R.id.ll_tags);
-
 
         reyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
 
@@ -193,11 +187,6 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
         }
 
     }
-
-
-
-
-
 
     private void searchLayoutAnimation() {
         // animation button in anh out
@@ -294,10 +283,24 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
         list.add("Mai Trinh");
         list.add("Nguyen Trinh");
         list.add("Ha Lam");
-        list.add("Huy Hoang");
+        list.add("c Hoang");
         list.add("Dinh Chien");
+        list.add("l Phuoc");
+        list.add("Da Nang");
+        list.add("Mai Trinh");
+        list.add("u Trinh");
+        list.add("Ha Lam");
+        list.add("p Hoang");
+        list.add("xChien");
         list.add("Duc Phuoc");
         list.add("Da Nang");
+        list.add("zz Trinh");
+        list.add("k Trinh");
+        list.add("Ha Lam");
+        list.add("m Hoang");
+        list.add("n Chien");
+        list.add("t Phuoc");
+        list.add("s Nang");
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         reyclerView.setLayoutManager(layoutManager);
         reyclerView.addItemDecoration(new RecyclerViewDividerItemDecoration(getContext(),LinearLayoutManager.VERTICAL));
@@ -350,15 +353,14 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
                 }
             }
         });
-
         //set dismiss listener
         quickActionPopup1.setOnDismissListener(new QuickActionPopup.OnDismissListener() {
             @Override
             public void onDismiss() {
+//                quickActionPopup1.editItem(1);
                 Toast.makeText(getContext(), "Dismissed", Toast.LENGTH_SHORT).show();
             }
         });
-
         //show on btn1
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -403,7 +405,6 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
         });
         dialog.show();
     }
-
 
     @Override
     public void onClick(View v) {
