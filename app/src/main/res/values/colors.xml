@@ -19,4 +19,18 @@
     <!-- Screen Navigation View -->
     <color name="navigation_bg_listview">#1d1d1d</color>
     <color name="navigation_bg_item_avatar">#323232</color>
+
+    <!-- Screen all contacts -->
+    <color name="contacts_user_name_color">#202021</color>
+    <color name="contacts_user_name_phone_number">#767a80</color>
+    <color name="contact_favorite_click">#ffc107</color>
+    <color name="contact_detail_click">#03a9f4</color>
+    <color name="contact_delete_click">#f43b3b</color>
+    <color name="contact_swip_background">#f5f6fb</color>
+    <color name="while_background">#ffffff</color>
+    <color name="popup_border_color">#9b9b9b</color>
+    <color name="org_line_divided">#9b9b9b</color>
+    <color name="search_ouside_background">#dadada</color>
+
+
 </resources>

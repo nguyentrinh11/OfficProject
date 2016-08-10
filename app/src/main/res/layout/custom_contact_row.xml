@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout android:id="@+id/swip"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:font="http://schemas.android.com/tools">
+    <LinearLayout
+        android:gravity="center_vertical|center_horizontal"
+        android:background="@color/contact_swip_background"
+        android:id="@+id/bottom_wrapper"
+        android:layout_width="250dp"
+        android:weightSum="3"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <!--What you want to show-->
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_weight="1"
+                android:src="@drawable/swipe_favorite"
+                android:id="@+id/imgv_favorite"
+                android:layout_width="@dimen/all_contacts_swipe_image_width"
+                android:layout_height="@dimen/all_contact_swipe_image_height" />
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:id="@+id/swip_favorite"
+                font:font="@string/font_helveticaneue_light"
+                android:textSize="@dimen/all_contacts_click_favorite_text_size"
+                android:textColor="@color/contact_favorite_click"
+                android:layout_marginTop="@dimen/all_contacts_swipe_text_margin_top"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_swip_favorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_weight="1"
+                android:src="@drawable/swipe_info"
+                android:id="@+id/imgv_details"
+                android:layout_width="@dimen/all_contacts_swipe_image_width"
+                android:layout_height="@dimen/all_contact_swipe_image_height" />
+            <offic.htk.com.officproject.views.CustomFontTextView
+                font:font="@string/font_helveticaneue_light"
+                android:textSize="@dimen/all_contacts_click_favorite_text_size"
+                android:layout_marginTop="@dimen/all_contacts_swipe_text_margin_top"
+                android:textColor="@color/contact_detail_click"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_swip_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_weight="1"
+                android:src="@drawable/swipe_delete"
+                android:id="@+id/imgv_delete"
+                android:layout_width="@dimen/all_contacts_swipe_image_width"
+                android:layout_height="@dimen/all_contact_swipe_image_height"/>
+            <offic.htk.com.officproject.views.CustomFontTextView
+                font:font="@string/font_helveticaneue_light"
+                android:textSize="@dimen/all_contacts_click_favorite_text_size"
+                android:layout_marginTop="@dimen/all_contacts_swipe_text_margin_top"
+                android:textColor="@color/contact_delete_click"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_swip_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- Bottom View End-->
+
+    <!-- Surface View Start -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/while_background"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--What you want to show in SurfaceView-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img"
+            android:src="@drawable/avatar"
+            android:layout_width="@dimen/all_contacts_circle_image_width"
+            android:layout_height="@dimen/all_contacts_circle_image_height" />
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:id="@+id/user_name"
+                font:font="@string/font_helveticaneue"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/contacts_user_name_color"
+                android:text="name"
+                android:textSize="@dimen/all_contacts_user_name_text_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/user_lock"
+                android:src="@drawable/lock"
+                android:layout_marginLeft="5dp"
+                android:paddingTop="@dimen/all_contacts_lock_image_padding_top"
+                android:baselineAlignBottom="true"
+                android:layout_toRightOf="@id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:id="@+id/user_phone_number"
+                android:layout_below="@id/user_name"
+                android:textColor="@color/contacts_user_name_phone_number"
+                font:font="@string/font_helveticaneue"
+                android:textSize="@dimen/all_contacts_user_name_text_phone_number"
+                android:text="0125488"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- Surface View End -->
+</com.daimajia.swipe.SwipeLayout>
