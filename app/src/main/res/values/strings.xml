@@ -87,9 +87,28 @@
     <string name="contact_swip_detail">Detail</string>
     <string name="contact_swip_favorite">Favorite</string>
     <string name="all_contacts_search_cancel">cancel</string>
+    <string name="error_add_tags">Please enter new tag !!!</string>
 
-    <!-- screen all contacts-->
 
+    <!-- Screen Add Tags-->
+    <string name="activity_add_tag_tv_title">Add Tags</string>
+    <string name="activity_add_tag_tv_done">Done</string>
+    <string name="activity_edt_add_tags">Add Tag</string>
+
+    <!-- Screen Dialog Add Contacts-->
+    <string name="tv_add_new_person">Add a new person</string>
+
+    <!-- Screen Fragment Create Your First Groups-->
+    <string name="btn_create_your_first_groups">Create your first group</string>
+    <string name="tv_title_edit_profile">Edit</string>
+    <string name="tv_done_profile">Done</string>
+
+
+    <!-- Screen Activity Edit Profile-->
+    <string name="activity_edit_profile_text_email">Email</string>
+    <string name="activity_edit_profile_text_user_name">Username</string>
+    <string name="activity_edit_profile_text_password">Password</string>
+    <string name="activity_edit_profile_text_confirm_pass">Confirm password</string>
 
 
 </resources>

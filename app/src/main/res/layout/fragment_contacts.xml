@@ -1,97 +1,336 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ln_alphabet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
     tools:context="offic.htk.com.officproject.fragments.FragmentContacts">
 
-    <LinearLayout
-        android:id="@+id/ll_content"
-        android:background="@color/while_background"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:id="@+id/layout"
-            android:gravity="center_vertical"
-            android:background="@color/search_ouside_background"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_width="440dp"
-            android:layout_height="60dp">
-            <LinearLayout
-                android:id="@+id/bt_filter"
-                android:layout_marginRight="10dp"
-                android:textSize="13dp"
-                android:layout_alignParentLeft="true"
-                android:background="@drawable/contact_set_org_fillter_button_background"
-                android:gravity="center_horizontal"
-                android:layout_width="65dp"
-                android:layout_height="30dp"
-                android:orientation="horizontal" >
-                <ImageView
-                    android:id="@+id/img_org_change"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/all_change_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
-                <ImageView
-                    android:src="@drawable/arrow_change_view"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            <LinearLayout
-                android:background="@drawable/item_btn1"
-                android:id="@+id/llsearch"
-                android:gravity="center_horizontal"
-                android:layout_width="260dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal">
-                <android.support.v7.widget.SearchView
-                    android:id="@+id/search_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </android.support.v7.widget.SearchView>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/bt_cancel"
-                android:layout_marginLeft="10dp"
-                android:visibility="gone"
-                android:background="@color/colorAccent"
-                android:gravity="center_horizontal|center_vertical"
-                android:layout_width="65dp"
-                android:layout_height="35dp"
-                android:orientation="horizontal" >
-                <TextView
-                    android:text="@string/all_contacts_search_cancel"
-                    android:textColor="@color/while_background"
-                    android:textSize="@dimen/all_contacts_search_cancel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_tags"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:layout_marginTop="5dp"
-            android:paddingLeft="10dp"
-            android:id="@+id/my_recycler_view"
+            android:id="@+id/ll_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="vertical" />
-    </LinearLayout>
+            android:background="@color/while_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="440dp"
+                android:layout_height="60dp"
+                android:background="@color/search_ouside_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <LinearLayout
+                    android:id="@+id/bt_filter"
+                    android:layout_width="65dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/contact_set_org_fillter_button_background"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:textSize="13dp">
+
+                    <ImageView
+                        android:id="@+id/img_org_change"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:src="@drawable/all_change_view" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/arrow_change_view" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llsearch"
+                    android:layout_width="260dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/item_btn1"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.SearchView
+                        android:id="@+id/search_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></android.support.v7.widget.SearchView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bt_cancel"
+                    android:layout_width="65dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorAccent"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all_contacts_search_cancel"
+                        android:textColor="@color/while_background"
+                        android:textSize="@dimen/all_contacts_search_cancel" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"></LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="18dip"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="18dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="70dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/A"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="A"
+                android:text="A" />
+
+            <TextView
+                android:id="@+id/B"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="B"
+                android:text="B" />
+
+            <TextView
+                android:id="@+id/C"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="quickScroll"
+                android:tag="C"
+                android:text="C" />
+
+            <TextView
+                android:id="@+id/D"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="D"
+                android:text="D" />
+
+            <TextView
+                android:id="@+id/E"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="E"
+                android:text="E" />
+
+            <TextView
+                android:id="@+id/F"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="F"
+                android:text="F" />
+
+            <TextView
+                android:id="@+id/G"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="G"
+                android:text="G" />
+
+            <TextView
+                android:id="@+id/H"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="H"
+                android:text="H" />
+
+            <TextView
+                android:id="@+id/I"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="I"
+                android:text="I" />
+
+            <TextView
+                android:id="@+id/J"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="J"
+                android:text="J" />
+
+            <TextView
+                android:id="@+id/K"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="K"
+                android:text="K" />
+
+            <TextView
+                android:id="@+id/L"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="L"
+                android:text="L" />
+
+            <TextView
+                android:id="@+id/M"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="M"
+                android:text="M" />
+
+            <TextView
+                android:id="@+id/N"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="N"
+                android:text="N" />
+
+            <TextView
+                android:id="@+id/O"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="O"
+                android:text="O" />
+
+            <TextView
+                android:id="@+id/P"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="P"
+                android:text="P" />
+
+            <TextView
+                android:id="@+id/Q"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="Q"
+                android:text="Q" />
+
+            <TextView
+                android:id="@+id/R"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="R"
+                android:text="R" />
+
+            <TextView
+                android:id="@+id/S"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="S"
+                android:text="S" />
+
+            <TextView
+                android:id="@+id/T"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="T"
+                android:text="T" />
+
+            <TextView
+                android:id="@+id/U"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="U"
+                android:text="U" />
+
+            <TextView
+                android:id="@+id/V"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="V"
+                android:text="V" />
+
+            <TextView
+                android:id="@+id/W"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="W"
+                android:text="W" />
+
+            <TextView
+                android:id="@+id/X"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="X"
+                android:text="X" />
+
+            <TextView
+                android:id="@+id/Y"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="Y"
+                android:text="Y" />
+
+            <TextView
+                android:id="@+id/Z"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="Z"
+                android:text="Z" />
+
+            <TextView
+                android:id="@+id/diff"
+                style="@style/alphabetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="#"
+                android:text="#" />
+
+        </LinearLayout>
+    </RelativeLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

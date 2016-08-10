@@ -32,5 +32,9 @@
     <color name="org_line_divided">#9b9b9b</color>
     <color name="search_ouside_background">#dadada</color>
 
+    <!-- Screen Add New Tag -->
+    <color name="activity_add_tag_tv">#FAFAFA</color>
+    <color name="activity_add_edt_add_tags">#1d1d1d</color>
+
 
 </resources>

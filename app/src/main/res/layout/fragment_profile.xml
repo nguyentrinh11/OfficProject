@@ -1,14 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Profile"
-        android:textSize="30dp" />
+        android:layout_height="@dimen/ln_info_avatar"
+        android:layout_gravity="center"
+        android:background="@color/contact_swip_background"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="@dimen/img_avatar_width_height"
+            android:layout_height="@dimen/img_avatar_width_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/img_avatar_margin_top"
+            android:src="@drawable/avatar" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/tv_user_name_margin_top"
+            android:gravity="center"
+            android:text="nguyentrinh11t"
+            android:textSize="@dimen/tv_user_name_text_size"
+            font:font="@string/font_helveticaneue" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ln_infomation_height"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fragment_profile_ln_margin"
+            android:orientation="horizontal">
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Email"
+                android:textSize="@dimen/fragment_profile_text_size"
+                font:font="@string/font_open_san_semibold" />
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:id="@+id/tv_info_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:singleLine="true"
+                android:text="testoffic27@gmail.com"
+                android:textSize="@dimen/fragment_profile_tv_text_size"
+                font:font="@string/font_helveticaneue" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/fragment_profile_view_margin_left"
+            android:background="#BDBDBD" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fragment_profile_ln_margin"
+            android:orientation="horizontal">
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Username"
+                android:textSize="16sp"
+                font:font="@string/font_open_san_semibold" />
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:id="@+id/tv_info_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:singleLine="true"
+                android:text="testoffic27"
+                android:textSize="@dimen/fragment_profile_tv_text_size"
+                font:font="@string/font_helveticaneue" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:background="#BDBDBD" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Etx"
+                android:textSize="@dimen/fragment_profile_text_size"
+                font:font="@string/font_open_san_semibold" />
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:id="@+id/tv_info_etx"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:singleLine="true"
+                android:text="1001"
+                android:textSize="@dimen/fragment_profile_tv_text_size"
+                font:font="@string/font_helveticaneue" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BDBDBD" />
+    </LinearLayout>
 </LinearLayout>

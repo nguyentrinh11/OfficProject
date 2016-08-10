@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import offic.htk.com.officproject.R;
 import offic.htk.com.officproject.base.BaseActivity;
@@ -15,14 +16,14 @@ import offic.htk.com.officproject.base.BaseActivity;
 /**
  * Created by nguyen on 04/08/2016.
  */
-public class AddNewCompanyActivity extends BaseActivity {
+public class AddNewCompanyActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout mContainerView, lnAdd;
     private View mExclusiveEmptyView;
+    private TextView tvCancel, tvDone;
 
     @Override
     protected void onCreate() {
-        mContainerView = (LinearLayout) findViewById(R.id.ln_add_phone);
-        lnAdd = (LinearLayout) findViewById(R.id.ln_add);
+
 
     }
 
@@ -38,6 +39,12 @@ public class AddNewCompanyActivity extends BaseActivity {
 
     @Override
     protected void initComponents() {
+        mContainerView = (LinearLayout) findViewById(R.id.ln_add_phone);
+        lnAdd = (LinearLayout) findViewById(R.id.ln_add);
+        tvCancel = (TextView) findViewById(R.id.tv_cancel);
+        tvDone = (TextView) findViewById(R.id.tv_done);
+        tvCancel.setOnClickListener(this);
+        tvDone.setOnClickListener(this);
 
     }
 
@@ -102,6 +109,20 @@ public class AddNewCompanyActivity extends BaseActivity {
 
     @Override
     protected int getLayoutRescource() {
-        return R.layout.fragment_add_new_company;
+        return R.layout.activity_add_new_company;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_cancel:
+                AddNewCompanyActivity.this.finish();
+                break;
+            case R.id.tv_done:
+                break;
+            default:
+                break;
+        }
+
     }
 }

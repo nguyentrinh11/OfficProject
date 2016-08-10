@@ -36,7 +36,15 @@
             android:name=".activitis.AddNewCompanyActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
-        <activity android:name=".activitis.AddTypeActivity"></activity>
+        <activity android:name=".activitis.AddTypeActivity" />
+        <activity
+            android:name=".activitis.AddTagActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity
+            android:name=".activitis.EditProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
     </application>
 
 </manifest>

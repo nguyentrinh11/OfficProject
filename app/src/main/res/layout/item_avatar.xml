@@ -12,7 +12,7 @@
         android:layout_height="@dimen/navigaiton_view_item_avatar_image_height"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="@dimen/navigaiton_view_item_avatar_name_margin_left"
-        android:background="@drawable/ic_logo_company" />
+        android:background="@drawable/avatar" />
 
     <offic.htk.com.officproject.views.CustomFontTextView
         android:id="@+id/tv_username"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.widget.Toolbar;
@@ -99,6 +100,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
     protected int getLayoutRescource() {
         return R.layout.activity_main;
     }
+
 
     @Override
     protected void initComponents() {
@@ -223,26 +225,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_add_info, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_add_new:
-                Intent intent = new Intent(MainActivity.this, AddNewCompanyActivity.class);
-//                intent.putExtra("type", "1");
-                startActivity(intent);
-                break;
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public void onPanelSlide(View panel, float slideOffset) {
@@ -294,6 +277,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
     public FragmentTabHost getFragmentTabHost() {
         return (FragmentTabHost) findViewById(android.R.id.tabhost);
     }
+
     public Toolbar getToolbar() {
         return (Toolbar) findViewById(R.id.toolbar);
     }
