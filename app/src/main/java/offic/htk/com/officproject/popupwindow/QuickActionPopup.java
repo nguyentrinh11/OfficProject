@@ -54,6 +54,9 @@ public class QuickActionPopup extends MyPopupWindow implements OnDismissListener
     public static final int ANIM_GROW_FROM_LEFT = 1;
 
 
+    final int[] lastPos = {-1};
+
+
     /**
      * Constructor for default vertical layout
      *
@@ -193,7 +196,6 @@ public class QuickActionPopup extends MyPopupWindow implements OnDismissListener
         }
 
         final int pos   =  mChildPos;
-        final int[] lastPos = {-1};
         final int actionId  = action.getActionId();
         container.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,15 +208,15 @@ public class QuickActionPopup extends MyPopupWindow implements OnDismissListener
             public void onClick(View v) {
                 if (mItemClickListener != null) {
                     mItemClickListener.onItemClick(QuickActionPopup.this, pos, actionId, llOrg);
-
                     Log.d("popup","position " + pos);
-                    lastPos[0] = pos;
                     if(!getActionItem(pos).isSticky()){
                         mDidAction = true;
                         checked.setVisibility(View.VISIBLE);
                         checked.setImageResource(R.drawable.check);
+                        editItem(lastPos[0]);
                         dismiss();
                     }
+                    lastPos[0] = pos;
                 }
             }
         });
@@ -227,7 +229,11 @@ public class QuickActionPopup extends MyPopupWindow implements OnDismissListener
     }
 
     public void editItem(int position){
-        actionItems.get(position);
+        if(lastPos[0] >= 0){
+            actionItems.get(position);
+            Log.d("edit last position"," " + position);
+            mTrack.getChildAt(position).findViewById(R.id.img_org_checked).setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -355,11 +361,15 @@ public class QuickActionPopup extends MyPopupWindow implements OnDismissListener
     public void setOnDismissListener(QuickActionPopup.OnDismissListener listener) {
         setOnDismissListener(this);
         mDismissListener = listener;
+        Log.d("set ondismiss"," dismiss");
+        editItem(lastPos[0]);
     }
 
     @Override
     public void onDismiss() {
         if (!mDidAction && mDismissListener != null) {
+            Log.d("ondismiss"," dismiss");
+            editItem(lastPos[0]);
             mDismissListener.onDismiss();
         }
     }

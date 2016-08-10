@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:layout_marginRight="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/buttonDelete"
+        android:layout_width="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:contentDescription="@null"
+        android:onClick="onDeleteClicked"
+        android:src="@drawable/ic_delete_phone" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <offic.htk.com.officproject.views.NewEditText
+            android:id="@+id/edt_address_street"
+            android:textColor="@color/add_contact_hint_text_color"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:background="@drawable/custom_component_border_bottom_and_left"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Street"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/ic_cusor_text"
+            android:textSize="15sp"
+            font:font="@string/font_helveticaneue">
+        <requestFocus />
+        </offic.htk.com.officproject.views.NewEditText>
+
+        <offic.htk.com.officproject.views.NewEditText
+            android:id="@+id/edt_address_city"
+            android:textColor="@color/add_contact_hint_text_color"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:background="@drawable/custom_component_border_bottom_and_left"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="City"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/ic_cusor_text"
+            android:textSize="15sp"
+            font:font="@string/font_helveticaneue">
+        </offic.htk.com.officproject.views.NewEditText>
+
+        <LinearLayout
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <offic.htk.com.officproject.views.NewEditText
+                android:id="@+id/edt_address_state"
+                android:textColor="@color/add_contact_hint_text_color"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:background="@drawable/custom_component_border_bottom_and_left"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="State"
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/ic_cusor_text"
+                android:textSize="15sp"
+                font:font="@string/font_helveticaneue">
+            </offic.htk.com.officproject.views.NewEditText>
+
+            <offic.htk.com.officproject.views.NewEditText
+                android:id="@+id/edt_address_zip"
+                android:textColor="@color/add_contact_hint_text_color"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/custom_component_border_bottom_and_left"
+                android:paddingLeft="10dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Zip"
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/ic_cusor_text"
+                android:textSize="15sp"
+                font:font="@string/font_helveticaneue">
+            </offic.htk.com.officproject.views.NewEditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_component_border_bottom_and_left"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <offic.htk.com.officproject.views.NewEditText
+                android:id="@+id/edt_address_country"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/add_contact_hint_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:clickable="false"
+                android:background="@null"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Country"
+                android:singleLine="true"
+                android:focusable="false"
+                android:textCursorDrawable="@drawable/ic_cusor_text"
+                android:textSize="15sp"
+                font:font="@string/font_helveticaneue">
+            </offic.htk.com.officproject.views.NewEditText>
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"/>
+
+            <ImageView
+                android:paddingRight="5dp"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_toRightOf="@+id/edt_address_country"
+                android:gravity="center"
+                android:src="@drawable/ic_row" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_value_org"
+        android:layout_width="0dp"
+        android:layout_weight="0.25"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_org"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/org_line_divided"
+            android:text="work"
+            android:textSize="15sp"
+            font:font="@string/font_helveticaneue" />
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/tv_org"
+            android:gravity="center"
+            android:src="@drawable/ic_row" />
+    </LinearLayout>
+</LinearLayout>

@@ -55,9 +55,9 @@
     <dimen name="all_contacts_popup_set_org_pace">15dp</dimen>
     <dimen name="all_contacts_popup_set_org_width">70dp</dimen>
 
-
-    <!-- screen all contacts -->
-
+    <!-- add new contacts -->
+    <dimen name="add_contacts_avatar_layout_width">50dp</dimen>
+    <dimen name="add_contacts_avatar_layout_height">50dp</dimen>
 
 
 </resources>

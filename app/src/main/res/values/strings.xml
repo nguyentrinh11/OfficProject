@@ -88,8 +88,17 @@
     <string name="contact_swip_favorite">Favorite</string>
     <string name="all_contacts_search_cancel">cancel</string>
 
-    <!-- screen all contacts-->
-
+    <!-- screen add new person -->
+    <string name="add_new_person_last_name_hint">Last name</string>
+    <string name="add_new_person_first_name_hint">First name</string>
+    <string name="add_new_person_title_hint">Title</string>
+    <string name="add_contacts_custom_field">CUSTOM FIELDS:</string>
+    <string name="add_contacts_network">SOCIAL NETWORKS:</string>
+    <string name="add_contacts_facebook_hint">Facebook</string>
+    <string name="add_contacts_twitter">twitter</string>
+    <string name="add_contacts_background_info">BACKGROUND INFO:</string>
+    <string name="add_contacts_permission">PERMISSION:</string>
+    <string name="add_contacts_tags">TAGS:</string>
 
 
 </resources>

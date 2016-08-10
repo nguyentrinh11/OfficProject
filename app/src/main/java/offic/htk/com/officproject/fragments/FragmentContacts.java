@@ -241,15 +241,14 @@ public class FragmentContacts extends BaseFragment {
                 }
             }
         });
-
         //set dismiss listener
         quickActionPopup1.setOnDismissListener(new QuickActionPopup.OnDismissListener() {
             @Override
             public void onDismiss() {
+//                quickActionPopup1.editItem(1);
                 Toast.makeText(getContext(), "Dismissed", Toast.LENGTH_SHORT).show();
             }
         });
-
         //show on btn1
         filter.setOnClickListener(new View.OnClickListener() {
             @Override

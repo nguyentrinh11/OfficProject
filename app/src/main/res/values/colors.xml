@@ -28,9 +28,11 @@
     <color name="contact_delete_click">#f43b3b</color>
     <color name="contact_swip_background">#f5f6fb</color>
     <color name="while_background">#ffffff</color>
-    <color name="popup_border_color">#9b9b9b</color>
     <color name="org_line_divided">#9b9b9b</color>
     <color name="search_ouside_background">#dadada</color>
+    <color name="add_contact_hint_text_color">#a9a9a9</color>
+    <color name="background_gray">#EEEEEE</color>
+    <color name="line_divided_dark_gray">#BDBDBD</color>
 
 
 </resources>
