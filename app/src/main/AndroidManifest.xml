@@ -46,7 +46,10 @@
             android:name=".activitis.EditProfileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
-        <activity android:name=".activitis.AddNewGroupActivity"></activity>
+        <activity
+            android:name=".activitis.AddNewGroupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen"></activity>
     </application>
 
 </manifest>

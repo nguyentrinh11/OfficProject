@@ -13,7 +13,7 @@
         android:background="#f44336">
 
         <offic.htk.com.officproject.views.CustomFontTextView
-            android:id="@+id/tv_cancel"
+            android:id="@+id/tv_cancel_add_new_group"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="left"
@@ -38,7 +38,7 @@
             font:font="@string/font_helveticaneue" />
 
         <offic.htk.com.officproject.views.CustomFontTextView
-            android:id="@+id/tv_done"
+            android:id="@+id/tv_done_add_new_group"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="right"
@@ -52,7 +52,7 @@
     </FrameLayout>
 
     <offic.htk.com.officproject.views.CustomFontEditText
-        android:id="@+id/edt_add_tags"
+        android:id="@+id/edt_add_new_group"
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_add_tag_edt_add_tags_height"
         android:layout_gravity="center"
