@@ -1,11 +1,14 @@
 package offic.htk.com.officproject.activitis;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,7 +26,6 @@ import offic.htk.com.officproject.models.realm.IM;
 import offic.htk.com.officproject.models.realm.Phone;
 import offic.htk.com.officproject.models.realm.Website;
 import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;
-import retrofit2.http.HEAD;
 
 /**
  * Created by nguyen on 04/08/2016.
@@ -32,7 +34,7 @@ import retrofit2.http.HEAD;
  */
 public class AddNewCompanyActivity extends BaseActivity implements View.OnClickListener {
     // view compnent
-    private LinearLayout  lnAddPhone,lnAddEmail,lnAddIM,lnAddWebsite,lnAddAddress;
+    private LinearLayout  lnAddPhone,lnAddEmail,lnAddIM,lnAddWebsite,lnAddAddress, mRootLayout;
     private RecyclerView rcPhone, rcEmail, rcIM, rcWebsite, rcAddress;
 
     // array list
@@ -55,6 +57,8 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     private final int WEBSITE_LIST_ID = 4;
     private final int ADDRESS_LIST_ID = 5;
 
+    private  View focus = getCurrentFocus();
+
     @Override
     protected void onCreate() {
 
@@ -66,7 +70,13 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
 
     @Override
     protected void initComponents() {
+
+        tvCancel = (TextView) findViewById(R.id.tv_cancel);
+        tvDone = (TextView) findViewById(R.id.tv_done);
+        tvCancel.setOnClickListener(this);
+        tvDone.setOnClickListener(this);
         //linearlayout
+        mRootLayout = (LinearLayout) findViewById(R.id.root_ln);
         lnAddPhone = (LinearLayout) findViewById(R.id.ln_add_phone);
         lnAddEmail = (LinearLayout) findViewById(R.id.ln_add_email);
         lnAddIM = (LinearLayout) findViewById(R.id.ln_add_im);
@@ -74,11 +84,7 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         lnAddAddress = (LinearLayout) findViewById(R.id.ln_add_address);
         mContainerView = (LinearLayout) findViewById(R.id.ln_add_phone);
 
-        tvCancel = (TextView) findViewById(R.id.tv_cancel);
-        tvDone = (TextView) findViewById(R.id.tv_done);
-        tvCancel.setOnClickListener(this);
-        tvDone.setOnClickListener(this);
-
+        mRootLayout.setOnClickListener(this);
         lnAddPhone.setOnClickListener(this);
         lnAddEmail.setOnClickListener(this);
         lnAddIM.setOnClickListener(this);
@@ -89,9 +95,9 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         rcPhone = (RecyclerView) findViewById(R.id.rc_phone);
         rcPhone.setLayoutManager(new LinearLayoutManager(this));
         rcPhone.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
-        Phone phone = new Phone();
-        phone.setCdValue("0987655");
-        mPhoneList.add(phone);
+//        Phone phone = new Phone();
+//        phone.setCdValue("0987655");
+//        mPhoneList.add(phone);
         mPhoneAdapter = new CustomRecyclerView(this,mPhoneList,PHONE_LIST_ID);
         rcPhone.setAdapter(mPhoneAdapter);
         mPhoneAdapter.notifyDataSetChanged();
@@ -100,9 +106,9 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         rcEmail = (RecyclerView) findViewById(R.id.rc_email);
         rcEmail.setLayoutManager(new LinearLayoutManager(this));
         rcEmail.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
-        Email email = new Email();
-        email.setCdValue("trinhmv@gmail.com");
-        mEmailList.add(email);
+//        Email email = new Email();
+//        email.setCdValue("trinhmv@gmail.com");
+//        mEmailList.add(email);
         mEmailAdapter = new CustomRecyclerView(this,mEmailList,EMAIL_LIST_ID);
         rcEmail.setAdapter(mEmailAdapter);
         mEmailAdapter.notifyDataSetChanged();
@@ -111,9 +117,9 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         rcIM = (RecyclerView) findViewById(R.id.rc_im);
         rcIM.setLayoutManager(new LinearLayoutManager(this));
         rcIM.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
-        IM im = new IM();
-        im.setCdValue("1111111");
-        mIMList.add(im);
+//        IM im = new IM();
+//        im.setCdValue("1111111");
+//        mIMList.add(im);
         mIMAdapter = new CustomRecyclerView(this,mIMList,IM_LIST_ID);
         rcIM.setAdapter(mIMAdapter);
         mIMAdapter.notifyDataSetChanged();
@@ -122,9 +128,9 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         rcWebsite = (RecyclerView) findViewById(R.id.rc_website);
         rcWebsite.setLayoutManager(new LinearLayoutManager(this));
         rcWebsite.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
-        Website wb = new Website();
-        wb.setCdValue("trinhmv.com");
-        mWebsiteList.add(wb);
+//        Website wb = new Website();
+//        wb.setCdValue("trinhmv.com");
+//        mWebsiteList.add(wb);
         mWebsiteAdapter = new CustomRecyclerView(this,mWebsiteList,WEBSITE_LIST_ID);
         rcWebsite.setAdapter(mWebsiteAdapter);
         mWebsiteAdapter.notifyDataSetChanged();
@@ -133,13 +139,13 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         rcAddress = (RecyclerView) findViewById(R.id.rc_address);
         rcAddress.setLayoutManager(new LinearLayoutManager(this));
         rcAddress.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
-        Address address = new Address();
-        address.setCdStreet("Le Do");
-        address.setCdCity("Da Nang");
-        address.setCdState("Da Nang");
-        address.setCdZip("60000");
-        address.setCdCountry("Viet Nam");
-        mAddressList.add(address);
+//        Address address = new Address();
+//        address.setCdStreet("Le Do");
+//        address.setCdCity("Da Nang");
+//        address.setCdState("Da Nang");
+//        address.setCdZip("60000");
+//        address.setCdCountry("Viet Nam");
+//        mAddressList.add(address);
         mAddressAdapter = new CustomRecyclerView(this,mAddressList,ADDRESS_LIST_ID);
         rcAddress.setAdapter(mAddressAdapter);
         mAddressAdapter.notifyDataSetChanged();
@@ -150,7 +156,7 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         return R.layout.activity_add_new_company;
     }
 
-    public class CustomRecyclerView extends RecyclerView.Adapter<CustomRecyclerView.CustomViewHolder>{
+    public class CustomRecyclerView extends RecyclerView.Adapter<CustomRecyclerView.CustomViewHolder> implements View.OnClickListener {
         private Context context;
         private List<Phone> aPhoneList = new ArrayList<>();
         private List<Email> aEmailList = new ArrayList<>();
@@ -199,22 +205,35 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
                 holder.edt_value.setHint("Add Phone");
                 holder.edt_value.setText(mPhone.getCdValue());
 //                holder.tv_org.setText();
+
+                holder.ln_org.setOnClickListener(this);
+                holder.imgDelete.setOnClickListener(this);
             }else if(listID == 2){
                 Email mEmail = aEmailList.get(position);
                 holder.edt_value.setHint("Add Email");
                 holder.edt_value.setText(mEmail.getCdValue());
 //                holder.tv_org.setText();
+
+                holder.ln_org.setOnClickListener(this);
+                holder.imgDelete.setOnClickListener(this);
             }else if(listID == 3){
                 IM mIM = aIMList.get(position);
                 holder.edt_value.setHint("Add IM");
                 holder.edt_value.setText(mIM.getCdValue());
 //                holder.tv_org.setText(mIM.get);
 //                holder.tv_type.setText();
+
+                holder.ln_org.setOnClickListener(this);
+                holder.ln_type.setOnClickListener(this);
+                holder.imgDelete.setOnClickListener(this);
             }else if(listID == 4){
                 Website mWebsite = aWebsiteList.get(position);
                 holder.edt_value.setHint("Add Website");
                 holder.edt_value.setText(mWebsite.getCdValue());
 //                holder.tv_org.setText();
+
+                holder.ln_org.setOnClickListener(this);
+                holder.imgDelete.setOnClickListener(this);
             }else if(listID == 5){
                 Address mAddress = aAddressList.get(position);
                 holder.edtStreet.setText(mAddress.getCdStreet());
@@ -223,6 +242,9 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
                 holder.edtZip.setText(mAddress.getCdZip());
                 holder.edtCountry.setText(mAddress.getCdCountry());
 //                holder.tv_org.setText();
+
+                holder.ln_org.setOnClickListener(this);
+                holder.imgDelete.setOnClickListener(this);
             }else{
             }
         }
@@ -244,15 +266,25 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
             }
         }
 
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.ln_value_org:
+                    break;
+                case R.id.ln_value_type:
+                    break;
+            }
+        }
+
         public class CustomViewHolder extends RecyclerView.ViewHolder {
             EditText edt_value, edtStreet, edtCity, edtState, edtZip, edtCountry;
             LinearLayout ln_org, ln_type, ln_country;
-            ImageView img;
+            ImageView imgDelete;
             TextView tv_org, tv_type;
             public CustomViewHolder(View itemView) {
                 super(itemView);
 
-                img = (ImageView) itemView.findViewById(R.id.buttonDelete);
+                imgDelete = (ImageView) itemView.findViewById(R.id.buttonDelete);
                 edt_value = (EditText) itemView.findViewById(R.id.edt_value);
                 ln_org = (LinearLayout) itemView.findViewById(R.id.ln_value_org);
                 ln_type = (LinearLayout) itemView.findViewById(R.id.ln_value_type);
@@ -270,25 +302,10 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.ln_add_phone:
-                isInputValid(mPhoneAdapter,rcPhone,mPhoneList,PHONE_LIST_ID);
-                break;
-            case R.id.ln_add_email:
-                isInputValid(mEmailAdapter,rcEmail,mEmailList,EMAIL_LIST_ID);
-                break;
-            case R.id.ln_add_im:
-                isInputValid(mIMAdapter,rcIM,mIMList,IM_LIST_ID);
-                break;
-            case R.id.ln_add_website:
-                isInputValid(mWebsiteAdapter,rcWebsite,mWebsiteList,WEBSITE_LIST_ID);
-                break;
-            case R.id.ln_add_address:
-                isInputValid(mAddressAdapter,rcAddress,mAddressList,ADDRESS_LIST_ID);
-                break;
-        }
+    public void hideSoftKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager)
+                getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),0);
     }
 
     /*
@@ -397,6 +414,34 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
                 addressList.add(address);
                 adapter.notifyDataSetChanged();
             }
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ln_add_phone:
+                isInputValid(mPhoneAdapter,rcPhone,mPhoneList,PHONE_LIST_ID);
+                break;
+            case R.id.ln_add_email:
+                isInputValid(mEmailAdapter,rcEmail,mEmailList,EMAIL_LIST_ID);
+                break;
+            case R.id.ln_add_im:
+                isInputValid(mIMAdapter,rcIM,mIMList,IM_LIST_ID);
+                break;
+            case R.id.ln_add_website:
+                isInputValid(mWebsiteAdapter,rcWebsite,mWebsiteList,WEBSITE_LIST_ID);
+                break;
+            case R.id.ln_add_address:
+                isInputValid(mAddressAdapter,rcAddress,mAddressList,ADDRESS_LIST_ID);
+                break;
+            case R.id.root_ln:
+                Log.d("add person ","click");
+                if(focus != null){
+                    focus.clearFocus();
+                    hideSoftKeyboard(this);
+                }
+                break;
         }
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:font="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_gray"
     android:orientation="vertical">
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Add new company"
+            android:text="Add new Person"
             android:textColor="#FAFAFA"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -56,18 +56,26 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:focusable="true"
+            android:id="@+id/root_ln"
+            android:focusableInTouchMode="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <View
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/add_contacts_margin_toolbar"
-                android:layout_height="0.5dp"
-                android:background="@color/line_divided_dark_gray" />
+            <requestFocus/>
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_marginTop="@dimen/add_contacts_margin_toolbar"-->
+            <!--android:layout_height="0.5dp"-->
+            <!--android:background="@color/line_divided_dark_gray" />-->
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/add_contacts_margin_toolbar"
+                android:padding="2dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_edit_text"
+                android:background="@drawable/custom_component_border_top_and_bottom"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -97,8 +105,14 @@
 
                 <LinearLayout
                     android:orientation="vertical"
+                    android:focusable="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+                    <!--<LinearLayout-->
+                        <!--android:focusable="true"-->
+                        <!--android:focusableInTouchMode="true"-->
+                        <!--android:layout_width="0px"-->
+                        <!--android:layout_height="0px"/>-->
                     <offic.htk.com.officproject.views.NewEditText
                         android:id="@+id/edt_add_contact_first_name"
                         android:layout_width="match_parent"
@@ -120,7 +134,7 @@
                         font:font="@string/font_helveticaneue" />
 
                     <offic.htk.com.officproject.views.NewEditText
-                        android:id="@+id/edt_add_contact_name"
+                        android:id="@+id/edt_add_contact_title"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/add_contacts_edit_text_height"
                         android:layout_gravity="center"
@@ -130,7 +144,7 @@
                         font:font="@string/font_helveticaneue" />
 
                     <LinearLayout
-                        android:id="@+id/ln_country"
+                        android:id="@+id/ln_company"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/add_contacts_edit_text_height"
                         android:background="@null"
@@ -138,7 +152,7 @@
                         android:orientation="horizontal">
 
                         <offic.htk.com.officproject.views.NewEditText
-                            android:id="@+id/edt_address_country"
+                            android:id="@+id/edt_add_contact_company"
                             android:layout_alignParentLeft="true"
                             android:textColor="@color/add_contact_hint_text_color"
                             android:layout_weight="10"
@@ -171,30 +185,22 @@
                             android:src="@drawable/ic_row" />
                     </LinearLayout>
                 </LinearLayout>
+                <requestFocus />
 
             </LinearLayout>
 
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line_divided_dark_gray"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/add_contacts_margin_toolbar"
-                android:layout_height="0.5dp"
-                android:background="@color/line_divided_dark_gray" />
             <LinearLayout
                 android:id="@+id/ln_add_info"
+                android:layout_marginTop="@dimen/add_contacts_margin_toolbar"
+                android:background="@drawable/custom_component_border_top_and_bottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:background="@drawable/custom_edit_text"
                 android:orientation="vertical">
 
                 <!-- add phone layout -->
                 <android.support.v7.widget.RecyclerView
+                    android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
                     android:id="@+id/rc_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -220,7 +226,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
+                        android:paddingLeft="@dimen/all_contacts_margin_left_10dp"
                         android:background="@null"
                         android:singleLine="true"
                         android:text="Add phone"
@@ -396,30 +402,22 @@
                         android:textSize="@dimen/add_contacts_text_size_normal_14sp"
                         font:font="@string/font_helveticaneue" />
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
-                    android:background="@color/line_divided_dark_gray" />
-
             </LinearLayout>
 
             <offic.htk.com.officproject.views.CustomFontTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/add_contacts_margin_left_20dp"
+                android:textSize="@dimen/add_contacts_text_size_larger_15sp"
+                android:layout_marginTop="@dimen/add_contacts_margin_top_15dp"
+                android:layout_marginBottom="@dimen/add_contacts_margin_top_15dp"
                 android:layout_marginLeft="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginRight="@dimen/add_contacts_margin_left_20dp"
                 android:layout_marginStart="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginTop="35dp"
-                android:gravity="center_vertical"
                 android:text="@string/add_contacts_custom_field" />
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:background="@drawable/custom_component_border_top_and_bottom"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/custom_edit_text"
                 android:orientation="vertical">
 
                 <offic.htk.com.officproject.views.NewEditText
@@ -451,21 +449,21 @@
                     font:font="@string/font_helveticaneue" />
             </LinearLayout>
 
+
             <offic.htk.com.officproject.views.CustomFontTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/add_contacts_margin_left_20dp"
+                android:textSize="@dimen/add_contacts_text_size_larger_15sp"
+                android:layout_marginTop="@dimen/add_contacts_margin_top_15dp"
+                android:layout_marginBottom="@dimen/add_contacts_margin_top_15dp"
                 android:layout_marginLeft="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginRight="@dimen/add_contacts_margin_left_20dp"
                 android:layout_marginStart="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginTop="35dp"
                 android:text="@string/add_contacts_network" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/custom_edit_text"
+                android:background="@drawable/custom_component_border_top_and_bottom"
                 android:orientation="vertical">
 
                 <offic.htk.com.officproject.views.NewEditText
@@ -515,21 +513,21 @@
                     font:font="@string/font_helveticaneue" />
             </LinearLayout>
 
+
             <offic.htk.com.officproject.views.CustomFontTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:textSize="@dimen/add_contacts_text_size_larger_15sp"
+                android:layout_marginTop="@dimen/add_contacts_margin_top_15dp"
+                android:layout_marginBottom="@dimen/add_contacts_margin_top_15dp"
                 android:layout_marginLeft="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginStart="@dimen/add_contacts_margin_left_20dp"
                 android:text="@string/add_contacts_background_info" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/custom_edit_text"
+                android:background="@drawable/custom_component_border_top_and_bottom"
                 android:orientation="vertical">
 
                 <offic.htk.com.officproject.views.NewEditText
@@ -547,18 +545,17 @@
             <offic.htk.com.officproject.views.CustomFontTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/add_contacts_margin_left_20dp"
+                android:textSize="@dimen/add_contacts_text_size_larger_15sp"
+                android:layout_marginTop="@dimen/add_contacts_margin_top_15dp"
+                android:layout_marginBottom="@dimen/add_contacts_margin_top_15dp"
                 android:layout_marginLeft="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginRight="@dimen/add_contacts_margin_left_20dp"
                 android:layout_marginStart="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginTop="35dp"
                 android:text="@string/add_contacts_permission" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/custom_edit_text"
+                android:background="@drawable/custom_component_border_top_and_bottom"
                 android:orientation="vertical"
                 android:padding="15dp">
 
@@ -663,23 +660,56 @@
             <offic.htk.com.officproject.views.CustomFontTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/add_contacts_margin_left_20dp"
+                android:textSize="@dimen/add_contacts_text_size_larger_15sp"
+                android:layout_marginTop="@dimen/add_contacts_margin_top_15dp"
+                android:layout_marginBottom="@dimen/add_contacts_margin_top_15dp"
                 android:layout_marginLeft="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginRight="@dimen/add_contacts_margin_left_20dp"
                 android:layout_marginStart="@dimen/add_contacts_margin_left_20dp"
-                android:layout_marginTop="35dp"
                 android:text="@string/add_contacts_tags" />
 
             <LinearLayout
+                android:id="@+id/ln_tags"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/custom_edit_text"
-                android:orientation="vertical"
-                android:padding="15dp">
+                android:background="@drawable/custom_component_border_top_and_bottom"
+                android:orientation="horizontal">
 
+                <LinearLayout
+                    android:id="@+id/add_contacts_ln_tags_list"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_add_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/add_contacts_layout_height_50dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/add_contacts_margin_left_20dp"
+                        android:src="@drawable/ic_add_phone" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingLeft="@dimen/all_contacts_margin_left_10dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:text="Add phone"
+                        android:textColor="@color/add_contacts_text_color_blue"
+                        android:textSize="@dimen/add_contacts_text_size_normal_14sp"
+                        font:font="@string/font_helveticaneue" />
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    <requestFocus />
 </LinearLayout>
 
