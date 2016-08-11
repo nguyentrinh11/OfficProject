@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import offic.htk.com.officproject.R;
 import offic.htk.com.officproject.activitis.AddNewGroupActivity;
+import offic.htk.com.officproject.activitis.AddTypeActivity;
+import offic.htk.com.officproject.activitis.ChooseCountryActivity;
 import offic.htk.com.officproject.activitis.MainActivity;
 import offic.htk.com.officproject.base.BaseFragment;
 
@@ -55,7 +57,9 @@ public class FragmentGroups extends BaseFragment implements View.OnClickListener
                 startActivity(new Intent(getContext(), AddNewGroupActivity.class));
                 break;
             case R.id.btn_create_your_first_groups:
-                startActivity(new Intent(getContext(), AddNewGroupActivity.class));
+                Intent intent = new Intent(getContext(), ChooseCountryActivity.class);
+                intent.putExtra("type", "3");
+                startActivity(intent);
                 break;
         }
     }

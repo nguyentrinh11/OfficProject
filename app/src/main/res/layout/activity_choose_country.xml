@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="offic.htk.com.officproject.activitis.ChooseCountryActivity">
+
+    <FrameLayout
+        android:id="@+id/fm_activity_choose_country"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fm_toolbar"
+        android:background="#f44336">
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/tv_cancel_profile_margin"
+            android:layout_marginStart="@dimen/tv_cancel_profile_margin"
+            android:gravity="center"
+            android:text="@string/sign_up_tv_cancel"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            font:font="@string/font_helveticaneue" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_title_choose_country"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Country"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            font:font="@string/font_helveticaneue_medium" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="Done"
+            android:textColor="#FAFAFA"
+            android:textSize="16sp"
+            font:font="@string/font_helveticaneue" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_start"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/fm_activity_choose_country"
+        android:layout_marginRight="18dip"
+        android:layout_marginTop="@dimen/view_activity_choose_country_margin_top"
+        android:background="#BDBDBD" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_choose_type_country"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_start"
+        android:layout_marginRight="18dip" />
+
+
+    <LinearLayout
+        android:layout_width="18dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/ln_alphabet_margin_top"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/A"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="A"
+            android:text="A" />
+
+        <TextView
+            android:id="@+id/B"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="B"
+            android:text="B" />
+
+        <TextView
+            android:id="@+id/C"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="C"
+            android:text="C" />
+
+        <TextView
+            android:id="@+id/D"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="D"
+            android:text="D" />
+
+        <TextView
+            android:id="@+id/E"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="E"
+            android:text="E" />
+
+        <TextView
+            android:id="@+id/F"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="F"
+            android:text="F" />
+
+        <TextView
+            android:id="@+id/G"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="G"
+            android:text="G" />
+
+        <TextView
+            android:id="@+id/H"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="H"
+            android:text="H" />
+
+        <TextView
+            android:id="@+id/I"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="I"
+            android:text="I" />
+
+        <TextView
+            android:id="@+id/J"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="J"
+            android:text="J" />
+
+        <TextView
+            android:id="@+id/K"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="K"
+            android:text="K" />
+
+        <TextView
+            android:id="@+id/L"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="L"
+            android:text="L" />
+
+        <TextView
+            android:id="@+id/M"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="M"
+            android:text="M" />
+
+        <TextView
+            android:id="@+id/N"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="N"
+            android:text="N" />
+
+        <TextView
+            android:id="@+id/O"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="O"
+            android:text="O" />
+
+        <TextView
+            android:id="@+id/P"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="P"
+            android:text="P" />
+
+        <TextView
+            android:id="@+id/Q"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="Q"
+            android:text="Q" />
+
+        <TextView
+            android:id="@+id/R"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="R"
+            android:text="R" />
+
+        <TextView
+            android:id="@+id/S"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="S"
+            android:text="S" />
+
+        <TextView
+            android:id="@+id/T"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="T"
+            android:text="T" />
+
+        <TextView
+            android:id="@+id/U"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="U"
+            android:text="U" />
+
+        <TextView
+            android:id="@+id/V"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="V"
+            android:text="V" />
+
+        <TextView
+            android:id="@+id/W"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="W"
+            android:text="W" />
+
+        <TextView
+            android:id="@+id/X"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="X"
+            android:text="X" />
+
+        <TextView
+            android:id="@+id/Y"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="Y"
+            android:text="Y" />
+
+        <TextView
+            android:id="@+id/Z"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="Z"
+            android:text="Z" />
+
+        <TextView
+            android:id="@+id/diff"
+            style="@style/alphabetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ScrollAphabet"
+            android:tag="#"
+            android:text="#" />
+
+    </LinearLayout>
+</RelativeLayout>
