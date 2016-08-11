@@ -57,6 +57,9 @@ public class AddTypeActivity extends BaseActivity implements ChooseTypeAdapter.s
             case 5:
                 setChooseTypeAddAddressOrEmail();
                 break;
+            case 6:
+                setChooseTypeIMProtocol();
+                break;
             default:
                 break;
         }

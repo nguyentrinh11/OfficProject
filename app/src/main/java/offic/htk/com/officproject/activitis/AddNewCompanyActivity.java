@@ -2,6 +2,7 @@ package offic.htk.com.officproject.activitis;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -320,15 +321,16 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     public void isInputValid(CustomRecyclerView adapter, RecyclerView recyclerView, List list, int listID) {
         int listSize = adapter.getItemCount();
         // value in edit text for phone, email, im, website
-        EditText edt = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_value);
-        // value in edit text for address
-        EditText edtStreet = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_street);
-        EditText edtCity = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_city);
-        EditText edtState = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_state);
-        EditText edtZip = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_zip);
-        EditText edtCountry = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_country);
+
 
         if (listSize >= 1) {
+            EditText edt = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_value);
+            // value in edit text for address
+            EditText edtStreet = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_street);
+            EditText edtCity = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_city);
+            EditText edtState = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_state);
+            EditText edtZip = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_zip);
+            EditText edtCountry = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_country);
             if (listID == ADDRESS_LIST_ID) {
                 if ((edtStreet.getText().toString().trim().length() < 1)) {
                     edtStreet.setFocusable(true);
