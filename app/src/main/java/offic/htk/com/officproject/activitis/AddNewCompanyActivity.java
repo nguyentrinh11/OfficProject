@@ -1,11 +1,14 @@
 package offic.htk.com.officproject.activitis;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,7 +34,7 @@ import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;
  */
 public class AddNewCompanyActivity extends BaseActivity implements View.OnClickListener {
     // view compnent
-    private LinearLayout  lnAddPhone,lnAddEmail,lnAddIM,lnAddWebsite,lnAddAddress;
+    private LinearLayout  lnAddPhone,lnAddEmail,lnAddIM,lnAddWebsite,lnAddAddress, mRootLayout;
     private RecyclerView rcPhone, rcEmail, rcIM, rcWebsite, rcAddress;
 
     // array list
@@ -54,6 +57,8 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     private final int WEBSITE_LIST_ID = 4;
     private final int ADDRESS_LIST_ID = 5;
 
+    private  View focus = getCurrentFocus();
+
     @Override
     protected void onCreate() {
 
@@ -65,7 +70,13 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
 
     @Override
     protected void initComponents() {
+
+        tvCancel = (TextView) findViewById(R.id.tv_cancel);
+        tvDone = (TextView) findViewById(R.id.tv_done);
+        tvCancel.setOnClickListener(this);
+        tvDone.setOnClickListener(this);
         //linearlayout
+        mRootLayout = (LinearLayout) findViewById(R.id.root_ln);
         lnAddPhone = (LinearLayout) findViewById(R.id.ln_add_phone);
         lnAddEmail = (LinearLayout) findViewById(R.id.ln_add_email);
         lnAddIM = (LinearLayout) findViewById(R.id.ln_add_im);
@@ -73,11 +84,7 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         lnAddAddress = (LinearLayout) findViewById(R.id.ln_add_address);
         mContainerView = (LinearLayout) findViewById(R.id.ln_add_phone);
 
-        tvCancel = (TextView) findViewById(R.id.tv_cancel);
-        tvDone = (TextView) findViewById(R.id.tv_done);
-        tvCancel.setOnClickListener(this);
-        tvDone.setOnClickListener(this);
-
+        mRootLayout.setOnClickListener(this);
         lnAddPhone.setOnClickListener(this);
         lnAddEmail.setOnClickListener(this);
         lnAddIM.setOnClickListener(this);
@@ -295,6 +302,11 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         }
     }
 
+    public void hideSoftKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager)
+                getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),0);
+    }
 
     /*
     * check input of the value is valid and add new row for user add new or edit value
@@ -422,6 +434,13 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
                 break;
             case R.id.ln_add_address:
                 isInputValid(mAddressAdapter,rcAddress,mAddressList,ADDRESS_LIST_ID);
+                break;
+            case R.id.root_ln:
+                Log.d("add person ","click");
+                if(focus != null){
+                    focus.clearFocus();
+                    hideSoftKeyboard(this);
+                }
                 break;
         }
     }
