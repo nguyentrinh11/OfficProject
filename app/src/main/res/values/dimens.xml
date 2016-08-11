@@ -146,4 +146,6 @@
     <dimen name="all_contacts_margin_left_10dp">10dp</dimen>
     <dimen name="add_contacts_margin_left_20dp">20dp</dimen>
     <dimen name="add_contacts_layout_padding_left_15dp">15dp</dimen>
+    <dimen name="add_contacts_margin_top_15dp">15dp</dimen>
+    <dimen name="add_contacts_text_size_larger_15sp">15sp</dimen>
 </resources>

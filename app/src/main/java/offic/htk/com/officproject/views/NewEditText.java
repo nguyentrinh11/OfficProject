@@ -20,7 +20,7 @@ import offic.htk.com.officproject.utils.FontUtils;
  * Created by Mai Trinh on 8/8/2016.
  */
 public class NewEditText extends EditText {
-    NewEditText et = NewEditText.this;
+//    NewEditText et = NewEditText.this;
     String ttfName;
 
     //The image we are going to use for the Clear button
@@ -79,7 +79,7 @@ public class NewEditText extends EditText {
         this.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-//                NewEditText et = NewEditText.this;
+                NewEditText et = NewEditText.this;
 
                 if (et.getCompoundDrawables()[2] == null)
                     return false;
@@ -98,13 +98,13 @@ public class NewEditText extends EditText {
         this.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
+                NewEditText et = NewEditText.this;
                 if (hasFocus && et.getText().toString().length() > 0){
-                    Log.d("edit","focus");
+                    Log.d("edit","image");
                     NewEditText.this.setCompoundDrawables(NewEditText.this.getCompoundDrawables()[0], NewEditText.this.getCompoundDrawables()[1], imgCloseButton, NewEditText.this.getCompoundDrawables()[3]);
                 }
                 else{
-                    Log.d("edit","unfocus");
-
+                    Log.d("edit","null");
                     NewEditText.this.setCompoundDrawables(NewEditText.this.getCompoundDrawables()[0], NewEditText.this.getCompoundDrawables()[1], null, NewEditText.this.getCompoundDrawables()[3]);
                 }
             }

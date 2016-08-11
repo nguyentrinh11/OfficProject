@@ -36,6 +36,7 @@ import java.util.List;
 
 import offic.htk.com.officproject.R;
 import offic.htk.com.officproject.activitis.AddNewCompanyActivity;
+import offic.htk.com.officproject.activitis.AddNewPersonActivity;
 import offic.htk.com.officproject.activitis.MainActivity;
 import offic.htk.com.officproject.adapters.CustomSwipeRecyclerViewAdapter;
 import offic.htk.com.officproject.base.BaseFragment;
@@ -442,6 +443,7 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
                 createDialog();
                 break;
             case R.id.tv_add_new_person:
+                startActivity(new Intent(getContext(), AddNewPersonActivity.class));
                 break;
             case R.id.tv_add_new_company:
                 startActivity(new Intent(getContext(), AddNewCompanyActivity.class));

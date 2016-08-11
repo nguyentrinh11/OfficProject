@@ -10,9 +10,9 @@
 
     <!-- this mess is what we have to do to get a bottom and left border only. -->
     <item android:top="-2dp"
-        android:left="-2dp"
+        android:left="1px"
         android:right="-2dp"
-        android:bottom="1px">
+        android:bottom="-2dp">
         <shape
             android:shape="rectangle">
             <stroke android:width="1px" android:color="@color/org_line_divided" />

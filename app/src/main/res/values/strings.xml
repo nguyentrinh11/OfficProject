@@ -112,7 +112,7 @@
     <string name="add_contacts_custom_field">CUSTOM FIELDS:</string>
     <string name="add_contacts_network">SOCIAL NETWORKS:</string>
     <string name="add_contacts_facebook_hint">Facebook</string>
-    <string name="add_contacts_twitter">twitter</string>
+    <string name="add_contacts_twitter">Twitter</string>
     <string name="add_contacts_background_info">BACKGROUND INFO:</string>
     <string name="add_contacts_permission">PERMISSION:</string>
     <string name="add_contacts_tags">TAGS:</string>
@@ -122,7 +122,7 @@
     <string name="activity_edit_profile_text_user_name">Username</string>
     <string name="activity_edit_profile_text_password">Password</string>
     <string name="activity_edit_profile_text_confirm_pass">Confirm password</string>
->>>>>>> 371a4adcb3e6ed392ae19e8ec109f9102b6b08f6
+    <string name="add_new_company_name">Name</string>
 
 
 </resources>
