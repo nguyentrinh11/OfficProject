@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.activitis.AddNewCompanyActivity;
-import offic.htk.com.officproject.activitis.MainActivity;
+import offic.htk.com.officproject.activities.AddNewCompanyActivity;
+import offic.htk.com.officproject.activities.MainActivity;
 import offic.htk.com.officproject.base.BaseFragment;
 
 /**

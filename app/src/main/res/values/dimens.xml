@@ -146,6 +146,11 @@
     <dimen name="all_contacts_margin_left_10dp">10dp</dimen>
     <dimen name="add_contacts_margin_left_20dp">20dp</dimen>
     <dimen name="add_contacts_layout_padding_left_15dp">15dp</dimen>
+
+
+    <!-- activity choose country -->
+    <dimen name="view_activity_choose_country_margin_top">20dp</dimen>
+    <dimen name="ln_alphabet_margin_top">120dp</dimen>
     <dimen name="add_contacts_margin_top_15dp">15dp</dimen>
     <dimen name="add_contacts_text_size_larger_15sp">15sp</dimen>
     <dimen name="text_smaller_normal_13sp">13sp</dimen>

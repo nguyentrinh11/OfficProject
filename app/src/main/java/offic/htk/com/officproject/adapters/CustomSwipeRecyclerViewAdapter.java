@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.activitis.ContactDetailActivity;
+import offic.htk.com.officproject.activities.ContactDetailActivity;
 
 /**
  * Created by Mai Trinh on 7/29/2016.

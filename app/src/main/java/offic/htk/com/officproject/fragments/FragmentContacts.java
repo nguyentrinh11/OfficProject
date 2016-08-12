@@ -32,12 +32,14 @@ import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.util.Attributes;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.activitis.AddNewCompanyActivity;
-import offic.htk.com.officproject.activitis.AddNewPersonActivity;
-import offic.htk.com.officproject.activitis.MainActivity;
+import offic.htk.com.officproject.activities.AddNewCompanyActivity;
+import offic.htk.com.officproject.activities.AddNewPersonActivity;
+import offic.htk.com.officproject.activities.MainActivity;
 import offic.htk.com.officproject.adapters.CustomSwipeRecyclerViewAdapter;
 import offic.htk.com.officproject.base.BaseFragment;
 import offic.htk.com.officproject.popupwindow.QuickActionItem;
@@ -52,7 +54,7 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
     private FragmentTabHost fragmentTabHost;
     private ImageView mImgAddNewContacts;
     private TextView mTvEditProfile;
-    MainActivity mainActivity = (MainActivity) getActivity();
+
 
     SwipeLayout swipeLayout;
     RecyclerView reyclerView;
@@ -70,8 +72,7 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void onCreate() {
-        fragmentTabHost = mainActivity.getFragmentTabHost();
-        fragmentTabHost.setVisibility(View.VISIBLE);
+
 //        Log.d("contacts","tabhost + toolbar " + toolbar.getHeight());
 //        toolbar = mainActivity.getToolbar();
 //        toolbar.getHeight();
@@ -82,6 +83,9 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contacts, container, false);
+        MainActivity mainActivity = (MainActivity) getActivity();
+        fragmentTabHost = mainActivity.getFragmentTabHost();
+        fragmentTabHost.setVisibility(View.VISIBLE);
         //layout search component
         filter = (LinearLayout) view.findViewById(R.id.bt_filter);
         llSearch = (LinearLayout) view.findViewById(R.id.llsearch);
@@ -269,7 +273,7 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
                     }
                 };
                 Handler handler = new Handler();
-                handler.postDelayed(delay,400);
+                handler.postDelayed(delay, 400);
                 layout_top.setBackgroundColor(getResources().getColor(R.color.search_ouside_background));
                 filter.startAnimation(inFromLeft);
                 filter.setVisibility(View.VISIBLE);
@@ -280,7 +284,7 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
         });
     }
 
-    public void setUpRecyclerView(){
+    public void setUpRecyclerView() {
         list.add("Mai Trinh");
         list.add("Nguyen Trinh");
         list.add("Ha Lam");
@@ -302,10 +306,18 @@ public class FragmentContacts extends BaseFragment implements View.OnClickListen
         list.add("n Chien");
         list.add("t Phuoc");
         list.add("s Nang");
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+
+        Collections.sort(list, new Comparator<String>() {
+            @Override
+            public int compare(String lhs, String rhs) {
+                return lhs.compareToIgnoreCase(rhs);
+            }
+
+        });
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         reyclerView.setLayoutManager(layoutManager);
-        reyclerView.addItemDecoration(new RecyclerViewDividerItemDecoration(getContext(),LinearLayoutManager.VERTICAL));
-        CustomSwipeRecyclerViewAdapter adapter = new CustomSwipeRecyclerViewAdapter(getContext(),list);
+        reyclerView.addItemDecoration(new RecyclerViewDividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        CustomSwipeRecyclerViewAdapter adapter = new CustomSwipeRecyclerViewAdapter(getContext(), list);
         ((CustomSwipeRecyclerViewAdapter) adapter).setMode(Attributes.Mode.Single);
         adapter.notifyDataSetChanged();
         reyclerView.setAdapter(adapter);

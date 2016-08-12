@@ -1,4 +1,4 @@
-package offic.htk.com.officproject.activitis;
+package offic.htk.com.officproject.activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -314,101 +314,101 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     **/
     public void isInputValid(CustomRecyclerView adapter, RecyclerView recyclerView, List list, int listID) {
         int listSize = adapter.getItemCount();
-        if (listSize >= 1) {
-            // value in edit text for phone, email, im, website
-            EditText edt = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_value);
-            // value in edit text for address
-            EditText edtStreet = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_street);
-            EditText edtCity = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_city);
-            EditText edtState = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_state);
-            EditText edtZip = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_zip);
-            EditText edtCountry = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_country);
-            if (listID == ADDRESS_LIST_ID) {
-                if ((edtStreet.getText().toString().trim().length() < 1)) {
-                    edtStreet.setFocusable(true);
-                    edtStreet.setError("Please enter street");
-                } else if (edtCity.getText().toString().trim().length() < 1) {
-                    edtStreet.setFocusable(true);
-                    edtCity.setError("Please enter city");
-                } else if (edtState.getText().toString().trim().length() < 1) {
-                    edtStreet.setFocusable(true);
-                    edtState.setError("Please enter state");
-                } else if (edtZip.getText().toString().trim().length() < 1) {
-                    edtStreet.setFocusable(true);
-                    edtZip.setError("Please enter zip");
-                } else if (edtCountry.getText().toString().trim().length() < 1) {
-                    edtStreet.setFocusable(true);
-                    edtCountry.setError("Please select country");
+            if (listSize >= 1) {
+                // value in edit text for phone, email, im, website
+                EditText edt = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_value);
+                // value in edit text for address
+                EditText edtStreet = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_street);
+                EditText edtCity = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_city);
+                EditText edtState = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_state);
+                EditText edtZip = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_zip);
+                EditText edtCountry = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_country);
+                if (listID == ADDRESS_LIST_ID) {
+                    if ((edtStreet.getText().toString().trim().length() < 1)) {
+                        edtStreet.setFocusable(true);
+                        edtStreet.setError("Please enter street");
+                    } else if (edtCity.getText().toString().trim().length() < 1) {
+                        edtStreet.setFocusable(true);
+                        edtCity.setError("Please enter city");
+                    } else if (edtState.getText().toString().trim().length() < 1) {
+                        edtStreet.setFocusable(true);
+                        edtState.setError("Please enter state");
+                    } else if (edtZip.getText().toString().trim().length() < 1) {
+                        edtStreet.setFocusable(true);
+                        edtZip.setError("Please enter zip");
+                    } else if (edtCountry.getText().toString().trim().length() < 1) {
+                        edtStreet.setFocusable(true);
+                        edtCountry.setError("Please select country");
+                    } else {
+                        List<Address> addressList = list;
+                        addressList.get(listSize - 1).setCdStreet(edtStreet.getText().toString());
+                        addressList.get(listSize - 1).setCdCity(edtCity.getText().toString());
+                        addressList.get(listSize - 1).setCdState(edtState.getText().toString());
+                        addressList.get(listSize - 1).setCdZip(edtZip.getText().toString());
+                        addressList.get(listSize - 1).setCdCountry(edtCountry.getText().toString());
+                        Address address = new Address();
+                        addressList.add(address);
+                        adapter.notifyDataSetChanged();
+                    }
                 } else {
-                    List<Address> addressList = list;
-                    addressList.get(listSize - 1).setCdStreet(edtStreet.getText().toString());
-                    addressList.get(listSize - 1).setCdCity(edtCity.getText().toString());
-                    addressList.get(listSize - 1).setCdState(edtState.getText().toString());
-                    addressList.get(listSize - 1).setCdZip(edtZip.getText().toString());
-                    addressList.get(listSize - 1).setCdCountry(edtCountry.getText().toString());
+                    if (edt.getText().toString().trim().length() < 1) {
+                        edt.setError("Please Enter Item");
+                    } else {
+                        if (listID == PHONE_LIST_ID) {
+                            List<Phone> phoneList = list;
+                            phoneList.get(listSize - 1).setCdValue(edt.getText().toString());
+                            Phone phone = new Phone();
+                            phoneList.add(phone);
+                            adapter.notifyDataSetChanged();
+                        } else if (listID == EMAIL_LIST_ID) {
+                            List<Email> emailList = list;
+                            emailList.get(listSize - 1).setCdValue(edt.getText().toString());
+                            Email email = new Email();
+                            emailList.add(email);
+                            adapter.notifyDataSetChanged();
+                        } else if (listID == IM_LIST_ID) {
+                            List<IM> imList = list;
+                            imList.get(listSize - 1).setCdValue(edt.getText().toString());
+                            IM im = new IM();
+                            imList.add(im);
+                            adapter.notifyDataSetChanged();
+                        } else if (listID == WEBSITE_LIST_ID) {
+                            List<Website> webList = list;
+                            webList.get(listSize - 1).setCdValue(edt.getText().toString());
+                            Website wb = new Website();
+                            webList.add(wb);
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                }
+            } else if (listSize == 0) {
+                if (listID == PHONE_LIST_ID) {
+                    Phone phone = new Phone();
+                    List<Phone> phoneList = list;
+                    phoneList.add(phone);
+                    adapter.notifyDataSetChanged();
+                } else if (listID == EMAIL_LIST_ID) {
+                    Email email = new Email();
+                    List<Email> emailList = list;
+                    emailList.add(email);
+                    adapter.notifyDataSetChanged();
+                } else if (listID == IM_LIST_ID) {
+                    IM im = new IM();
+                    List<IM> imList = list;
+                    imList.add(im);
+                    adapter.notifyDataSetChanged();
+                } else if (listID == WEBSITE_LIST_ID) {
+                    Website wb = new Website();
+                    List<Website> webList = list;
+                    webList.add(wb);
+                    adapter.notifyDataSetChanged();
+                } else if (listID == ADDRESS_LIST_ID) {
                     Address address = new Address();
+                    List<Address> addressList = list;
                     addressList.add(address);
                     adapter.notifyDataSetChanged();
                 }
-            } else {
-                if (edt.getText().toString().trim().length() < 1) {
-                    edt.setError("Please Enter Item");
-                } else {
-                    if (listID == PHONE_LIST_ID) {
-                        List<Phone> phoneList = list;
-                        phoneList.get(listSize - 1).setCdValue(edt.getText().toString());
-                        Phone phone = new Phone();
-                        phoneList.add(phone);
-                        adapter.notifyDataSetChanged();
-                    } else if (listID == EMAIL_LIST_ID) {
-                        List<Email> emailList = list;
-                        emailList.get(listSize - 1).setCdValue(edt.getText().toString());
-                        Email email = new Email();
-                        emailList.add(email);
-                        adapter.notifyDataSetChanged();
-                    } else if (listID == IM_LIST_ID) {
-                        List<IM> imList = list;
-                        imList.get(listSize - 1).setCdValue(edt.getText().toString());
-                        IM im = new IM();
-                        imList.add(im);
-                        adapter.notifyDataSetChanged();
-                    } else if (listID == WEBSITE_LIST_ID) {
-                        List<Website> webList = list;
-                        webList.get(listSize - 1).setCdValue(edt.getText().toString());
-                        Website wb = new Website();
-                        webList.add(wb);
-                        adapter.notifyDataSetChanged();
-                    }
-                }
             }
-        } else if (listSize == 0) {
-            if (listID == PHONE_LIST_ID) {
-                Phone phone = new Phone();
-                List<Phone> phoneList = list;
-                phoneList.add(phone);
-                adapter.notifyDataSetChanged();
-            } else if (listID == EMAIL_LIST_ID) {
-                Email email = new Email();
-                List<Email> emailList = list;
-                emailList.add(email);
-                adapter.notifyDataSetChanged();
-            } else if (listID == IM_LIST_ID) {
-                IM im = new IM();
-                List<IM> imList = list;
-                imList.add(im);
-                adapter.notifyDataSetChanged();
-            } else if (listID == WEBSITE_LIST_ID) {
-                Website wb = new Website();
-                List<Website> webList = list;
-                webList.add(wb);
-                adapter.notifyDataSetChanged();
-            } else if (listID == ADDRESS_LIST_ID) {
-                Address address = new Address();
-                List<Address> addressList = list;
-                addressList.add(address);
-                adapter.notifyDataSetChanged();
-            }
-        }
     }
 
     @Override
@@ -438,4 +438,5 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
                 break;
         }
     }
+
 }

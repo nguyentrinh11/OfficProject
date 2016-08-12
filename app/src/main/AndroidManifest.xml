@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activitis.LoginActivity"
+            android:name=".activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen">
             <intent-filter>
@@ -21,36 +21,43 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activitis.MainActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
         <activity
-            android:name=".activitis.SplashActivity"
+            android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
         <activity
-            android:name=".activitis.ForgotPasswordActivity"
+            android:name=".activities.ForgotPasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
         <activity
-            android:name=".activitis.AddNewCompanyActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
-        <activity android:name=".activitis.AddTypeActivity" />
-        <activity android:name=".activitis.AddNewPersonActivity" />
-        <activity
-            android:name=".activitis.AddTagActivity"
+            android:name=".activities.AddNewCompanyActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
         <activity
-            android:name=".activitis.EditProfileActivity"
+            android:name=".activities.AddTypeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity android:name=".activities.AddNewPersonActivity" />
+        <activity
+            android:name=".activities.AddTagActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
         <activity
-            android:name=".activitis.AddNewGroupActivity"
+            android:name=".activities.EditProfileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
-        <activity android:name=".activitis.ContactDetailActivity"></activity>
+        <activity
+            android:name=".activities.AddNewGroupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity android:name=".activities.ContactDetailActivity"></activity>
+        <activity
+            android:name=".activities.ChooseCountryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
     </application>
 
 </manifest>
