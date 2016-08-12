@@ -148,4 +148,17 @@
     <dimen name="add_contacts_layout_padding_left_15dp">15dp</dimen>
     <dimen name="add_contacts_margin_top_15dp">15dp</dimen>
     <dimen name="add_contacts_text_size_larger_15sp">15sp</dimen>
+    <dimen name="text_smaller_normal_13sp">13sp</dimen>
+
+    <!-- contact detail -->
+    <dimen name="contact_detail_title_description_height">20dp</dimen>
+    <dimen name="contact_detail_layout_content_name_height">75dp</dimen>
+    <dimen name="add_contacts_text_size_large_17sp">17sp</dimen>
+    <dimen name="contact_detail_avatar_margin_left_20dp">20dp</dimen>
+    <dimen name="contact_detail_row_info_height">50dp</dimen>
+    <dimen name="contact_detail_row_info_margin_left">10dp</dimen>
+    <dimen name="contact_detail_row_info_margin_right">10dp</dimen>
+    <dimen name="contacts_detail_text_size_normal_14sp">14sp</dimen>
+    <dimen name="ontacts_detail_layout_padding_left_15dp">15dp</dimen>
+
 </resources>

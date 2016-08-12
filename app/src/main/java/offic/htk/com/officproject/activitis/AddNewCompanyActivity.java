@@ -43,8 +43,6 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     private List<IM> mIMList = new ArrayList<>();
     private List<Website> mWebsiteList = new ArrayList<>();
     private List<Address> mAddressList = new ArrayList<>();
-    private LinearLayout mContainerView, lnAdd;
-    private View mExclusiveEmptyView;
     private TextView tvCancel, tvDone;
 
     //    private CustomListViewAdapter mAdapter;
@@ -64,10 +62,6 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
 
     }
 
-    public void onDeleteClicked(View v) {
-        mContainerView.removeView((View) v.getParent());
-    }
-
     @Override
     protected void initComponents() {
 
@@ -82,7 +76,6 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         lnAddIM = (LinearLayout) findViewById(R.id.ln_add_im);
         lnAddWebsite = (LinearLayout) findViewById(R.id.ln_add_website);
         lnAddAddress = (LinearLayout) findViewById(R.id.ln_add_address);
-        mContainerView = (LinearLayout) findViewById(R.id.ln_add_phone);
 
         mRootLayout.setOnClickListener(this);
         lnAddPhone.setOnClickListener(this);
@@ -189,11 +182,11 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view;
             if(listID == 5){
-                view = mInflater.inflate(R.layout.add_contact_address_item_row, parent, false);
+                view = mInflater.inflate(R.layout.custom_add_contact_address_row, parent, false);
             }else if(listID == 3){
-                view = mInflater.inflate(R.layout.add_contact_im_item_row, parent, false);
+                view = mInflater.inflate(R.layout.custom_add_contact_im_row, parent, false);
             }else{
-                view = mInflater.inflate(R.layout.add_contact_info_item_row, parent, false);
+                view = mInflater.inflate(R.layout.custom_add_contact_info_row, parent, false);
             }
             return new CustomViewHolder(view);
         }
@@ -270,8 +263,10 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.ln_value_org:
+                    Log.d("adapter","click org " + listID);
                     break;
                 case R.id.ln_value_type:
+                    Log.d("adapter","click type " + listID);
                     break;
             }
         }
@@ -319,16 +314,15 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     **/
     public void isInputValid(CustomRecyclerView adapter, RecyclerView recyclerView, List list, int listID) {
         int listSize = adapter.getItemCount();
-        // value in edit text for phone, email, im, website
-        EditText edt = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_value);
-        // value in edit text for address
-        EditText edtStreet = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_street);
-        EditText edtCity = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_city);
-        EditText edtState = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_state);
-        EditText edtZip = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_zip);
-        EditText edtCountry = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_country);
-
         if (listSize >= 1) {
+            // value in edit text for phone, email, im, website
+            EditText edt = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_value);
+            // value in edit text for address
+            EditText edtStreet = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_street);
+            EditText edtCity = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_city);
+            EditText edtState = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_state);
+            EditText edtZip = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_zip);
+            EditText edtCountry = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_country);
             if (listID == ADDRESS_LIST_ID) {
                 if ((edtStreet.getText().toString().trim().length() < 1)) {
                     edtStreet.setFocusable(true);

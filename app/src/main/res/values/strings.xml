@@ -116,13 +116,18 @@
     <string name="add_contacts_background_info">BACKGROUND INFO:</string>
     <string name="add_contacts_permission">PERMISSION:</string>
     <string name="add_contacts_tags">TAGS:</string>
+    <string name="add_new_company_name">Name</string>
 
     <!-- Screen Activity Edit Profile-->
     <string name="activity_edit_profile_text_email">Email</string>
     <string name="activity_edit_profile_text_user_name">Username</string>
     <string name="activity_edit_profile_text_password">Password</string>
     <string name="activity_edit_profile_text_confirm_pass">Confirm password</string>
-    <string name="add_new_company_name">Name</string>
 
+    <!-- contact detail-->
+    <string name="contact_detail_custom_id">custom ID</string>
+    <string name="contact_detail_facebook">facebook</string>
+    <string name="contact_detail_linkedin">linkedIn</string>
+    <string name="contact_detail_twitter">twitter</string>
 
 </resources>

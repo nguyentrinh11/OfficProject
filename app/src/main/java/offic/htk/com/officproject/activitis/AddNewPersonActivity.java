@@ -187,11 +187,11 @@ public class AddNewPersonActivity extends BaseActivity implements View.OnClickLi
         public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view;
             if (listID == 5) {
-                view = mInflater.inflate(R.layout.add_contact_address_item_row, parent, false);
+                view = mInflater.inflate(R.layout.custom_add_contact_address_row, parent, false);
             } else if (listID == 3) {
-                view = mInflater.inflate(R.layout.add_contact_im_item_row, parent, false);
+                view = mInflater.inflate(R.layout.custom_add_contact_im_row, parent, false);
             } else {
-                view = mInflater.inflate(R.layout.add_contact_info_item_row, parent, false);
+                view = mInflater.inflate(R.layout.custom_add_contact_info_row, parent, false);
             }
             return new CustomViewHolder(view);
         }
@@ -268,8 +268,16 @@ public class AddNewPersonActivity extends BaseActivity implements View.OnClickLi
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.ln_value_org:
+                    Log.d("adapter","click org " + listID);
+                    Intent intent = new Intent(context,AddTypeActivity.class);
+                    intent.putExtra("type",String.valueOf(listID));
+                    startActivity(intent);
                     break;
                 case R.id.ln_value_type:
+                    Log.d("adapter","click type " + listID);
+                    Intent in = new Intent(context,AddTypeActivity.class);
+                    in.putExtra("type",String.valueOf(listID));
+                    startActivity(in);
                     break;
             }
         }

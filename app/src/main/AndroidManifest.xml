@@ -37,7 +37,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
         <activity android:name=".activitis.AddTypeActivity" />
-        <activity android:name=".activitis.AddNewPersonActivity"></activity>
+        <activity android:name=".activitis.AddNewPersonActivity" />
         <activity
             android:name=".activitis.AddTagActivity"
             android:screenOrientation="portrait"
@@ -49,7 +49,8 @@
         <activity
             android:name=".activitis.AddNewGroupActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen"></activity>
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity android:name=".activitis.ContactDetailActivity"></activity>
     </application>
 
 </manifest>
