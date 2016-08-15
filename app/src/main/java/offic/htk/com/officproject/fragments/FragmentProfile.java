@@ -10,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.activitis.EditProfileActivity;
-import offic.htk.com.officproject.activitis.MainActivity;
 import offic.htk.com.officproject.activitis.SettingsLanguageActivity;
 import offic.htk.com.officproject.activitis.SynchroniseContactsActivity;
+import offic.htk.com.officproject.activities.EditProfileActivity;
+import offic.htk.com.officproject.activities.MainActivity;
 import offic.htk.com.officproject.base.BaseFragment;
 
 /**

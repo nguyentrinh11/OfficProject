@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.activitis.MainActivity;
+import offic.htk.com.officproject.activities.MainActivity;
 import offic.htk.com.officproject.rest.response.ListOrganizations.Organization;
 
 

@@ -20,6 +20,7 @@
     <color name="navigation_bg_listview">#1d1d1d</color>
     <color name="navigation_bg_item_avatar">#323232</color>
 
+
     <!-- Screen all contacts -->
     <color name="contacts_user_name_color">#202021</color>
     <color name="contacts_user_name_phone_number">#767a80</color>
@@ -38,6 +39,11 @@
     <color name="activity_add_tag_tv">#FAFAFA</color>
     <color name="activity_add_edt_add_tags">#1d1d1d</color>
     <color name="add_contacts_text_color_blue">#4FC3F7</color>
+    <color name="contact_name_dark_black_color">#313131</color>
+    <color name="contact_detail_title_description_dream">#b4b4b4</color>
+    <color name="note_user_main_text_color">#333333</color>
+    <color name="note_add_day_color">#999999</color>
+    <color name="notes_border">#dedede</color>
 
 
 </resources>

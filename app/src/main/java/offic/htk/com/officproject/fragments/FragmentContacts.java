@@ -37,12 +37,11 @@ import java.util.Comparator;
 import java.util.List;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.activitis.AddNewCompanyActivity;
-import offic.htk.com.officproject.activitis.AddNewPersonActivity;
-import offic.htk.com.officproject.activitis.MainActivity;
+import offic.htk.com.officproject.activities.AddNewCompanyActivity;
+import offic.htk.com.officproject.activities.AddNewPersonActivity;
+import offic.htk.com.officproject.activities.MainActivity;
 import offic.htk.com.officproject.adapters.CustomSwipeRecyclerViewAdapter;
 import offic.htk.com.officproject.base.BaseFragment;
-import offic.htk.com.officproject.models.Choose;
 import offic.htk.com.officproject.popupwindow.QuickActionItem;
 import offic.htk.com.officproject.popupwindow.QuickActionPopup;
 import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;

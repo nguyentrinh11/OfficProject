@@ -18,13 +18,9 @@ import java.util.Comparator;
 import java.util.List;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.activitis.AddMoreMembersActivity;
-import offic.htk.com.officproject.activitis.AddNewGroupActivity;
-import offic.htk.com.officproject.activitis.AddTypeActivity;
-import offic.htk.com.officproject.activitis.ChooseCountryActivity;
-import offic.htk.com.officproject.activitis.MainActivity;
+import offic.htk.com.officproject.activities.AddNewGroupActivity;
+import offic.htk.com.officproject.activities.MainActivity;
 import offic.htk.com.officproject.adapters.CustomSwipeGroupsAdapter;
-import offic.htk.com.officproject.adapters.CustomSwipeRecyclerViewAdapter;
 import offic.htk.com.officproject.base.BaseFragment;
 import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;
 

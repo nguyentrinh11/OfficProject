@@ -1,4 +1,4 @@
-package offic.htk.com.officproject.activitis;
+package offic.htk.com.officproject.activities;
 
 import android.content.Intent;
 import android.graphics.Color;

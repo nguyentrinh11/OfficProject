@@ -7,11 +7,11 @@
 
     <ImageView
         android:id="@+id/buttonDelete"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="@dimen/add_contacts_address_img_delete_margin_left_20dp"
+        android:layout_marginRight="@dimen/img_delte_margin_left_10dp"
         android:contentDescription="@null"
         android:onClick="onDeleteClicked"
         android:src="@drawable/ic_delete_phone" />

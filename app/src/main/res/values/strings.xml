@@ -125,15 +125,27 @@
     <string name="add_contacts_background_info">BACKGROUND INFO:</string>
     <string name="add_contacts_permission">PERMISSION:</string>
     <string name="add_contacts_tags">TAGS:</string>
+    <string name="add_new_company_name">Name</string>
+    <string name="add_contacts_permission_group">Me, plus this group</string>
+    <string name="add_contacts_permission_just_me">Just me</string>
+    <string name="add_contacts_permission_everyone">Everyone</string>
+    <string name="add_contacts_permission_these_people">Me, plus these people</string>
+    <string name="add_contacts_add_people">Plus more</string>
+    <string name="add_custom_field_custom_field">Custom field</string>
 
     <!-- Screen Activity Edit Profile-->
     <string name="activity_edit_profile_text_email">Email</string>
     <string name="activity_edit_profile_text_user_name">Username</string>
     <string name="activity_edit_profile_text_password">Password</string>
     <string name="activity_edit_profile_text_confirm_pass">Confirm password</string>
-    <string name="add_new_company_name">Name</string>
     <string name="sync_contacts_dialog">\"Offic\" would like to access your contacts</string>
     <string name="tv_title_sync_contacts">Synchronise Contacts</string>
 
+    <!-- contact detail-->
+    <string name="contact_detail_custom_id">custom ID</string>
+    <string name="contact_detail_facebook">facebook</string>
+    <string name="contact_detail_linkedin">linkedIn</string>
+    <string name="contact_detail_twitter">twitter</string>
+    <string name="add_custom_field">Add custom field</string>
 
 </resources>

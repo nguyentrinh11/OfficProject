@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.activitis.MainActivity;
+import offic.htk.com.officproject.activities.MainActivity;
 import offic.htk.com.officproject.base.BaseFragment;
 
 /**

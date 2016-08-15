@@ -1,6 +1,7 @@
 package offic.htk.com.officproject.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import offic.htk.com.officproject.R;
+import offic.htk.com.officproject.activities.ContactDetailActivity;
 
 /**
  * Created by Mai Trinh on 7/29/2016.
@@ -115,6 +117,8 @@ public class CustomSwipeRecyclerViewAdapter extends RecyclerSwipeAdapter<CustomS
             @Override
             public void onClick(View view) {
                 Log.d("Adapter","detail position click " + position);
+                Intent intent = new Intent(context, ContactDetailActivity.class);
+                context.startActivity(intent);
             }
         });
 

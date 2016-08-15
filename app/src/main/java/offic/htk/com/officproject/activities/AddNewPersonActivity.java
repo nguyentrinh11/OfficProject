@@ -1,4 +1,4 @@
-package offic.htk.com.officproject.activitis;
+package offic.htk.com.officproject.activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -28,15 +28,10 @@ import offic.htk.com.officproject.models.realm.Phone;
 import offic.htk.com.officproject.models.realm.Website;
 import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;
 
-/**
- * Created by nguyen on 04/08/2016.
- *
- * edit by Mai on 09/08/2016
- */
-public class AddNewCompanyActivity extends BaseActivity implements View.OnClickListener {
-    // view compnent
-    private LinearLayout  lnAddPhone,lnAddEmail,lnAddIM,lnAddWebsite,lnAddAddress, mRootLayout;
+public class AddNewPersonActivity extends BaseActivity implements View.OnClickListener {
+    private LinearLayout lnAddPhone, lnAddEmail, lnAddIM, lnAddWebsite, lnAddAddress, lnCompany, mRootLayout;
     private RecyclerView rcPhone, rcEmail, rcIM, rcWebsite, rcAddress;
+    private EditText edtFirstName, edtLastName,edtTitle, edtCompany;
 
     // array list
     private List<Phone> mPhoneList = new ArrayList<>();
@@ -44,8 +39,6 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     private List<IM> mIMList = new ArrayList<>();
     private List<Website> mWebsiteList = new ArrayList<>();
     private List<Address> mAddressList = new ArrayList<>();
-    private LinearLayout mContainerView, lnAdd;
-    private View mExclusiveEmptyView;
     private TextView tvCancel, tvDone;
 
     //    private CustomListViewAdapter mAdapter;
@@ -65,17 +58,14 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
 
     }
 
-    public void onDeleteClicked(View v) {
-        mContainerView.removeView((View) v.getParent());
-    }
-
     @Override
     protected void initComponents() {
+        // edit text person name
+        edtFirstName = (EditText) findViewById(R.id.edt_add_contact_first_name);
+        edtFirstName = (EditText) findViewById(R.id.edt_add_contact_last_name);
+        edtFirstName = (EditText) findViewById(R.id.edt_add_contact_title);
+        edtFirstName = (EditText) findViewById(R.id.edt_add_contact_company);
 
-        tvCancel = (TextView) findViewById(R.id.tv_cancel);
-        tvDone = (TextView) findViewById(R.id.tv_done);
-        tvCancel.setOnClickListener(this);
-        tvDone.setOnClickListener(this);
         //linearlayout
         mRootLayout = (LinearLayout) findViewById(R.id.root_ln);
         lnAddPhone = (LinearLayout) findViewById(R.id.ln_add_phone);
@@ -83,7 +73,7 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         lnAddIM = (LinearLayout) findViewById(R.id.ln_add_im);
         lnAddWebsite = (LinearLayout) findViewById(R.id.ln_add_website);
         lnAddAddress = (LinearLayout) findViewById(R.id.ln_add_address);
-        mContainerView = (LinearLayout) findViewById(R.id.ln_add_phone);
+        lnCompany = (LinearLayout) findViewById(R.id.ln_company);
 
         mRootLayout.setOnClickListener(this);
         lnAddPhone.setOnClickListener(this);
@@ -91,55 +81,62 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         lnAddIM.setOnClickListener(this);
         lnAddWebsite.setOnClickListener(this);
         lnAddAddress.setOnClickListener(this);
+        lnCompany.setOnClickListener(this);
+
+        // header component
+        tvCancel = (TextView) findViewById(R.id.tv_cancel);
+        tvDone = (TextView) findViewById(R.id.tv_done);
+        tvCancel.setOnClickListener(this);
+        tvDone.setOnClickListener(this);
 
         // recyclerview phone
         rcPhone = (RecyclerView) findViewById(R.id.rc_phone);
         rcPhone.setLayoutManager(new LinearLayoutManager(this));
-        rcPhone.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
+        rcPhone.addItemDecoration(new RecyclerViewDividerItemDecoration(this, RecyclerViewDividerItemDecoration.VERTICAL_LIST));
 //        Phone phone = new Phone();
 //        phone.setCdValue("0987655");
 //        mPhoneList.add(phone);
-        mPhoneAdapter = new CustomRecyclerView(this,mPhoneList,PHONE_LIST_ID);
+        mPhoneAdapter = new CustomRecyclerView(this, mPhoneList, PHONE_LIST_ID);
         rcPhone.setAdapter(mPhoneAdapter);
         mPhoneAdapter.notifyDataSetChanged();
 
         // recyclerview email
         rcEmail = (RecyclerView) findViewById(R.id.rc_email);
         rcEmail.setLayoutManager(new LinearLayoutManager(this));
-        rcEmail.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
+        rcEmail.addItemDecoration(new RecyclerViewDividerItemDecoration(this, RecyclerViewDividerItemDecoration.VERTICAL_LIST));
 //        Email email = new Email();
 //        email.setCdValue("trinhmv@gmail.com");
 //        mEmailList.add(email);
-        mEmailAdapter = new CustomRecyclerView(this,mEmailList,EMAIL_LIST_ID);
+        mEmailAdapter = new CustomRecyclerView(this, mEmailList, EMAIL_LIST_ID);
         rcEmail.setAdapter(mEmailAdapter);
         mEmailAdapter.notifyDataSetChanged();
 
         // recyclerview im
         rcIM = (RecyclerView) findViewById(R.id.rc_im);
         rcIM.setLayoutManager(new LinearLayoutManager(this));
-        rcIM.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
+        rcIM.addItemDecoration(new RecyclerViewDividerItemDecoration(this, RecyclerViewDividerItemDecoration.VERTICAL_LIST));
 //        IM im = new IM();
 //        im.setCdValue("1111111");
 //        mIMList.add(im);
-        mIMAdapter = new CustomRecyclerView(this,mIMList,IM_LIST_ID);
+        mIMAdapter = new CustomRecyclerView(this, mIMList, IM_LIST_ID);
         rcIM.setAdapter(mIMAdapter);
         mIMAdapter.notifyDataSetChanged();
 
         // recyclerview website
         rcWebsite = (RecyclerView) findViewById(R.id.rc_website);
         rcWebsite.setLayoutManager(new LinearLayoutManager(this));
-        rcWebsite.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
+        rcWebsite.addItemDecoration(new RecyclerViewDividerItemDecoration(this, RecyclerViewDividerItemDecoration.VERTICAL_LIST));
 //        Website wb = new Website();
 //        wb.setCdValue("trinhmv.com");
 //        mWebsiteList.add(wb);
-        mWebsiteAdapter = new CustomRecyclerView(this,mWebsiteList,WEBSITE_LIST_ID);
+        mWebsiteAdapter = new CustomRecyclerView(this, mWebsiteList, WEBSITE_LIST_ID);
         rcWebsite.setAdapter(mWebsiteAdapter);
         mWebsiteAdapter.notifyDataSetChanged();
 
         // recyclerview address
         rcAddress = (RecyclerView) findViewById(R.id.rc_address);
         rcAddress.setLayoutManager(new LinearLayoutManager(this));
-        rcAddress.addItemDecoration(new RecyclerViewDividerItemDecoration(this,RecyclerViewDividerItemDecoration.VERTICAL_LIST));
+        rcAddress.addItemDecoration(new RecyclerViewDividerItemDecoration(this, RecyclerViewDividerItemDecoration.VERTICAL_LIST));
 //        Address address = new Address();
 //        address.setCdStreet("Le Do");
 //        address.setCdCity("Da Nang");
@@ -147,14 +144,14 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
 //        address.setCdZip("60000");
 //        address.setCdCountry("Viet Nam");
 //        mAddressList.add(address);
-        mAddressAdapter = new CustomRecyclerView(this,mAddressList,ADDRESS_LIST_ID);
+        mAddressAdapter = new CustomRecyclerView(this, mAddressList, ADDRESS_LIST_ID);
         rcAddress.setAdapter(mAddressAdapter);
         mAddressAdapter.notifyDataSetChanged();
     }
 
     @Override
     protected int getLayoutRescource() {
-        return R.layout.activity_add_new_company;
+        return R.layout.activity_add_new_person;
     }
 
     public class CustomRecyclerView extends RecyclerView.Adapter<CustomRecyclerView.CustomViewHolder> implements View.OnClickListener {
@@ -170,18 +167,18 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         public CustomRecyclerView(Context context, List list, int listID) {
             this.context = context;
             this.listID = listID;
-            if(listID == 1){
+            if (listID == 1) {
                 this.aPhoneList = list;
-            }else if(listID == 2){
+            } else if (listID == 2) {
                 this.aEmailList = list;
-            }else if(listID == 3){
+            } else if (listID == 3) {
                 this.aIMList = list;
-            }else if(listID == 4){
+            } else if (listID == 4) {
                 this.aWebsiteList = list;
-            }else if(listID == 5){
+            } else if (listID == 5) {
                 this.aAddressList = list;
-            }else{
-                Toast.makeText(context,"wrong list id", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "wrong list id", Toast.LENGTH_SHORT).show();
             }
             this.mInflater = LayoutInflater.from(context);
         }
@@ -189,12 +186,12 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         @Override
         public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view;
-            if(listID == 5){
-                view = mInflater.inflate(R.layout.add_contact_address_item_row, parent, false);
-            }else if(listID == 3){
-                view = mInflater.inflate(R.layout.add_contact_im_item_row, parent, false);
-            }else{
-                view = mInflater.inflate(R.layout.add_contact_info_item_row, parent, false);
+            if (listID == 5) {
+                view = mInflater.inflate(R.layout.custom_add_contact_address_row, parent, false);
+            } else if (listID == 3) {
+                view = mInflater.inflate(R.layout.custom_add_contact_im_row, parent, false);
+            } else {
+                view = mInflater.inflate(R.layout.custom_add_contact_info_row, parent, false);
             }
             return new CustomViewHolder(view);
         }
@@ -252,17 +249,17 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
 
         @Override
         public int getItemCount() {
-            if(listID == 1){
+            if (listID == 1) {
                 return aPhoneList.size();
-            }else if(listID == 2){
+            } else if (listID == 2) {
                 return aEmailList.size();
-            }else if(listID == 3){
+            } else if (listID == 3) {
                 return aIMList.size();
-            }else if(listID == 4){
+            } else if (listID == 4) {
                 return aWebsiteList.size();
-            }else if(listID == 5){
+            } else if (listID == 5) {
                 return aAddressList.size();
-            }else{
+            } else {
                 return 0;
             }
         }
@@ -271,8 +268,16 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.ln_value_org:
+                    Log.d("adapter","click org " + listID);
+                    Intent intent = new Intent(context,AddTypeActivity.class);
+                    intent.putExtra("type",String.valueOf(listID));
+                    startActivity(intent);
                     break;
                 case R.id.ln_value_type:
+                    Log.d("adapter","click type " + listID);
+                    Intent in = new Intent(context,AddTypeActivity.class);
+                    in.putExtra("type",String.valueOf(listID));
+                    startActivity(in);
                     break;
             }
         }
@@ -282,6 +287,7 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
             LinearLayout ln_org, ln_type, ln_country;
             ImageView imgDelete;
             TextView tv_org, tv_type;
+
             public CustomViewHolder(View itemView) {
                 super(itemView);
 
@@ -303,12 +309,6 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         }
     }
 
-    public void hideSoftKeyboard(Activity activity) {
-        InputMethodManager imm = (InputMethodManager)
-                getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),0);
-    }
-
     /*
     * check input of the value is valid and add new row for user add new or edit value
     *
@@ -320,10 +320,8 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     **/
     public void isInputValid(CustomRecyclerView adapter, RecyclerView recyclerView, List list, int listID) {
         int listSize = adapter.getItemCount();
-        // value in edit text for phone, email, im, website
-
-
         if (listSize >= 1) {
+            // value in edit text for phone, email, im, website
             EditText edt = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_value);
             // value in edit text for address
             EditText edtStreet = (EditText) recyclerView.getChildAt(listSize - 1).findViewById(R.id.edt_address_street);
@@ -419,23 +417,34 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
         }
     }
 
+
+    public void hideSoftKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager)
+                getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),0);
+    }
+
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.ln_add_phone:
-                isInputValid(mPhoneAdapter,rcPhone,mPhoneList,PHONE_LIST_ID);
+                isInputValid(mPhoneAdapter, rcPhone, mPhoneList, PHONE_LIST_ID);
                 break;
             case R.id.ln_add_email:
-                isInputValid(mEmailAdapter,rcEmail,mEmailList,EMAIL_LIST_ID);
+                isInputValid(mEmailAdapter, rcEmail, mEmailList, EMAIL_LIST_ID);
                 break;
             case R.id.ln_add_im:
-                isInputValid(mIMAdapter,rcIM,mIMList,IM_LIST_ID);
+                isInputValid(mIMAdapter, rcIM, mIMList, IM_LIST_ID);
                 break;
             case R.id.ln_add_website:
-                isInputValid(mWebsiteAdapter,rcWebsite,mWebsiteList,WEBSITE_LIST_ID);
+                isInputValid(mWebsiteAdapter, rcWebsite, mWebsiteList, WEBSITE_LIST_ID);
                 break;
             case R.id.ln_add_address:
-                isInputValid(mAddressAdapter,rcAddress,mAddressList,ADDRESS_LIST_ID);
+                isInputValid(mAddressAdapter, rcAddress, mAddressList, ADDRESS_LIST_ID);
+                break;
+            case R.id.ln_company:
+                Intent inten = new Intent(this,AddTypeActivity.class);
+                startActivity(inten);
                 break;
             case R.id.root_ln:
                 Log.d("add person ","click");
