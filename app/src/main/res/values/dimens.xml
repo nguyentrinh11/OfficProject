@@ -146,6 +146,8 @@
     <dimen name="all_contacts_margin_left_10dp">10dp</dimen>
     <dimen name="add_contacts_margin_left_20dp">20dp</dimen>
     <dimen name="add_contacts_layout_padding_left_15dp">15dp</dimen>
+    <dimen name="add_contacts_permission_group_value_margin_left">30dp</dimen>
+    <dimen name="add_contacts_permission_row_height">40dp</dimen>
 
 
     <!-- activity choose country -->
@@ -158,12 +160,40 @@
     <!-- contact detail -->
     <dimen name="contact_detail_title_description_height">20dp</dimen>
     <dimen name="contact_detail_layout_content_name_height">75dp</dimen>
-    <dimen name="add_contacts_text_size_large_17sp">17sp</dimen>
+    <dimen name="add_contacts_text_size_large_18sp">18sp</dimen>
     <dimen name="contact_detail_avatar_margin_left_20dp">20dp</dimen>
     <dimen name="contact_detail_row_info_height">50dp</dimen>
     <dimen name="contact_detail_row_info_margin_left">10dp</dimen>
     <dimen name="contact_detail_row_info_margin_right">10dp</dimen>
     <dimen name="contacts_detail_text_size_normal_14sp">14sp</dimen>
     <dimen name="ontacts_detail_layout_padding_left_15dp">15dp</dimen>
+    <dimen name="contact_detail_ln_link">50dp</dimen>
+    <dimen name="contact_detail_note_padding_top">7dp</dimen>
+    <dimen name="contact_detail_note_value_padding_top">3dp</dimen>
+    <dimen name="contact_detail_note_value_padding_bottom">5dp</dimen>
+    <dimen name="img_delte_margin_left_10dp">10dp</dimen>
+    <dimen name="add_contacts_address_img_delete_margin_left_20dp">20dp</dimen>
+
+    <!-- notes -->
+    <dimen name="notes_margin_top_20dp">20dp</dimen>
+    <dimen name="notes_padding_left">10dp</dimen>
+    <dimen name="notes_padding_bottom">10dp</dimen>
+    <dimen name="notes_padding_right">10dp</dimen>
+    <dimen name="note_user_name_size">14sp</dimen>
+    <dimen name="note_add_day">10dp</dimen>
+    <dimen name="notes_user_name_margin_left">10dp</dimen>
+    <dimen name="note_margin_edit_20ddp">20dp</dimen>
+    <dimen name="notes_user_name_margin_top_5dp">5dp</dimen>
+    <dimen name="notes_add_date_margin_top_10dp">5dp</dimen>
+    <dimen name="notes_user_name_width_200dp">200dp</dimen>
+    <dimen name="notes_margin_bottom_5dp">5dp</dimen>
+    <dimen name="rc_attack_file_margin_left_5dp">5dp</dimen>
+    <dimen name="rc_attack_file_margin_bottom_10dp">10dp</dimen>
+    <dimen name="notes_avatar_width_35dp">35dp</dimen>
+    <dimen name="note_avatar_margin_left">5dp</dimen>
+    <dimen name="notes_head_margin_top_10dp">10dp</dimen>
+    <dimen name="notes_attack_file_margin_3dp">3dp</dimen>
+    <dimen name="note_attack_file_width">80dp</dimen>
+    <dimen name="note_rc_attack_file_width">86dp</dimen>
 
 </resources>

@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dialog_add_new_height"
-        android:background="@drawable/custom_edit_text"
+        android:background="@drawable/custom_component_all_boder"
         android:orientation="vertical">
 
         <offic.htk.com.officproject.views.CustomFontTextView
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/tv_dialog_cancel_height"
         android:layout_gravity="center"
-        android:background="@drawable/custom_edit_text"
+        android:background="@drawable/custom_component_all_boder"
         android:gravity="center"
         android:text="Cancel"
         android:textColor="#157efb"

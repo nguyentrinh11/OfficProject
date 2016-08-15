@@ -53,11 +53,13 @@
             android:name=".activities.AddNewGroupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
-        <activity android:name=".activities.ContactDetailActivity"></activity>
+        <activity android:name=".activities.ContactDetailActivity" />
         <activity
             android:name=".activities.ChooseCountryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen" />
+        <activity android:name=".activities.AddCustomFieldActivity" />
+        <activity android:name=".activities.NotesActivity"></activity>
     </application>
 
 </manifest>

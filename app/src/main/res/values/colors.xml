@@ -41,6 +41,9 @@
     <color name="add_contacts_text_color_blue">#4FC3F7</color>
     <color name="contact_name_dark_black_color">#313131</color>
     <color name="contact_detail_title_description_dream">#b4b4b4</color>
+    <color name="note_user_main_text_color">#333333</color>
+    <color name="note_add_day_color">#999999</color>
+    <color name="notes_border">#dedede</color>
 
 
 </resources>

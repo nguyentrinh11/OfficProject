@@ -63,11 +63,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <requestFocus/>
-            <!--<View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginTop="@dimen/add_contacts_margin_toolbar"-->
-            <!--android:layout_height="0.5dp"-->
-            <!--android:background="@color/line_divided_dark_gray" />-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_marginTop="@dimen/add_contacts_margin_toolbar"
@@ -584,7 +579,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
-                        android:text="Everyone" />
+                        android:text="@string/add_contacts_permission_everyone" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -607,54 +602,117 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
-                        android:text="Just me" />
+                        android:text="@string/add_contacts_permission_just_me" />
                 </LinearLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     android:gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/ic_unselected_permission" />
-
-                    <offic.htk.com.officproject.views.CustomFontTextView
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/ln_permission_group"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
-                        android:text="Me, plus this group" />
-                </LinearLayout>
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
 
-                <LinearLayout
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/ic_unselected_permission" />
+
+                        <offic.htk.com.officproject.views.CustomFontTextView
+                            android:id="@+id/tv_permission_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
+                            android:text="@string/add_contacts_permission_group" />
+                    </LinearLayout>
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:id="@+id/add_contacts_permission_group"
+                        android:layout_below="@id/ln_permission_group"
+                        android:visibility="gone"
+                        android:layout_marginLeft="@dimen/add_contacts_permission_group_value_margin_left"
+                        android:layout_alignLeft="@id/ln_permission_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/add_contacts_edit_text_height" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
                     android:gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/ln_permission_people"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/ic_unselected_permission" />
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
 
-                    <offic.htk.com.officproject.views.CustomFontTextView
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/ic_unselected_permission" />
+
+                        <offic.htk.com.officproject.views.CustomFontTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
+                            android:text="@string/add_contacts_permission_these_people" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rc_add_contacts_list_permission_people"
+                        android:layout_marginLeft="@dimen/add_contacts_permission_group_value_margin_left"
+                        android:layout_below="@id/ln_permission_people"
+                        android:layout_alignLeft="@id/ln_permission_people"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/all_contacts_margin_left_10dp"
-                        android:text="Me, plus these people" />
-                </LinearLayout>
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:id="@+id/ln_add_permission_people"
+                        android:layout_below="@id/rc_add_contacts_list_permission_people"
+                        android:layout_marginLeft="@dimen/add_contacts_permission_group_value_margin_left"
+                        android:layout_alignLeft="@id/ln_permission_people"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/add_contacts_permission_row_height"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_add_phone" />
+
+                        <offic.htk.com.officproject.views.CustomFontTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="@dimen/all_contacts_margin_left_10dp"
+                            android:background="@null"
+                            android:singleLine="true"
+                            android:text="@string/add_contacts_add_people"
+                            android:textColor="@color/add_contacts_text_color_blue"
+                            android:textSize="@dimen/add_contacts_text_size_normal_14sp"
+                            font:font="@string/font_helveticaneue" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
             </LinearLayout>
 
             <offic.htk.com.officproject.views.CustomFontTextView

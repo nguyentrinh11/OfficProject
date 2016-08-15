@@ -63,11 +63,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <requestFocus/>
-            <!--<View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginTop="@dimen/add_contacts_margin_toolbar"-->
-            <!--android:layout_height="0.5dp"-->
-            <!--android:background="@color/line_divided_dark_gray" />-->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/contact_detail_layout_content_name_height"
@@ -108,7 +104,7 @@
                         android:background="@null"
                         android:hint="@string/add_new_person_last_name_hint"
                         android:textColor="@color/contact_name_dark_black_color"
-                        android:textSize="@dimen/add_contacts_text_size_large_17sp"
+                        android:textSize="@dimen/add_contacts_text_size_large_18sp"
                         font:font="@string/font_helveticaneue_medium" />
 
                     <offic.htk.com.officproject.views.CustomFontTextView
@@ -136,6 +132,92 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_contacts_margin_toolbar"
+                android:paddingLeft="@dimen/contact_detail_avatar_margin_left_20dp"
+                android:paddingStart="@dimen/contact_detail_avatar_margin_left_20dp"
+                android:paddingRight="@dimen/contact_detail_avatar_margin_left_20dp"
+                android:paddingEnd="@dimen/contact_detail_avatar_margin_left_20dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:background="@drawable/custom_component_border_top_and_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ln_navi_note"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/navi_note"
+                        android:paddingTop="@dimen/contact_detail_note_padding_top"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:id="@+id/tv_note_value"
+                        android:text="7"
+                        android:paddingTop="@dimen/contact_detail_note_value_padding_top"
+                        android:paddingBottom="@dimen/contact_detail_note_value_padding_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_navi_list_people"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:src="@drawable/navi_listpeople"
+                        android:paddingTop="@dimen/contact_detail_note_padding_top"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:id="@+id/tv_list_people_value"
+                        android:text="7"
+                        android:paddingTop="@dimen/contact_detail_note_value_padding_top"
+                        android:paddingBottom="@dimen/contact_detail_note_value_padding_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ln_navi_deal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/navi_deal"
+                        android:paddingTop="@dimen/contact_detail_note_padding_top"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <offic.htk.com.officproject.views.CustomFontTextView
+                        android:id="@+id/tv_deal_value"
+                        android:text="7"
+                        android:paddingTop="@dimen/contact_detail_note_value_padding_top"
+                        android:paddingBottom="@dimen/contact_detail_note_value_padding_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/ln_contact_info"
                 android:layout_marginTop="@dimen/add_contacts_margin_toolbar"
                 android:background="@drawable/custom_component_border_top_and_bottom"
@@ -150,6 +232,7 @@
                     android:id="@+id/rc_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"

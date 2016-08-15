@@ -139,7 +139,7 @@
     <dimen name="ln_edit_information">250dp</dimen>
     <dimen name="ln_item_view_margin">15dp</dimen>
     <dimen name="view_margin_left">10dp</dimen>
->>>>>>> 371a4adcb3e6ed392ae19e8ec109f9102b6b08f6
+
 
 
 </resources>

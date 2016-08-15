@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_component_all_boder_no_coners"
+    android:layout_marginBottom="@dimen/notes_margin_bottom_5dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_margin="@dimen/notes_head_margin_top_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/notes_img_user_avatar"
+            android:layout_width="@dimen/notes_avatar_width_35dp"
+            android:layout_height="@dimen/notes_avatar_width_35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:padding="0dp"
+            android:src="@drawable/avatar" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/notes_tv_user_name"
+            android:layout_width="@dimen/notes_user_name_width_200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/notes_user_name_margin_left"
+            android:layout_toRightOf="@id/notes_img_user_avatar"
+            android:text="User Name"
+            android:textColor="@color/note_user_main_text_color"
+            android:textSize="@dimen/note_user_name_size"
+            font:font="@string/font_helveticaneue_medium" />
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/notes_tv_add_date"
+            android:layout_width="@dimen/notes_user_name_width_200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notes_tv_user_name"
+            android:layout_marginTop="@dimen/notes_add_date_margin_top_10dp"
+            android:layout_marginLeft="@dimen/notes_user_name_margin_left"
+            android:layout_toRightOf="@id/notes_img_user_avatar"
+            android:text="add date"
+            android:textColor="@color/note_add_day_color"
+            android:textSize="@dimen/note_add_day"
+            font:font="@string/font_helveticaneue_light" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true">
+            <ImageView
+                android:id="@+id/notes_img_edit"
+                android:src="@drawable/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_marginLeft="@dimen/note_margin_edit_20ddp"
+                android:layout_marginRight="@dimen/note_margin_edit_20ddp"
+                android:background="@color/contact_name_dark_black_color"
+                android:layout_width="1px"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/notes_img_delete"
+                android:src="@drawable/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_marginLeft="@dimen/notes_add_date_margin_top_10dp"
+        android:background="@color/notes_border"
+        android:layout_width="match_parent"
+        android:layout_height="2px"/>
+
+    <offic.htk.com.officproject.views.CustomFontTextView
+        android:id="@+id/notes_message"
+        android:text="Something write there..."
+        android:layout_margin="@dimen/notes_add_date_margin_top_10dp"
+        font:font="@string/font_helveticaneue"
+        android:textColor="@color/note_user_main_text_color"
+        android:textSize="@dimen/note_user_name_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_note_attack_file"
+        android:layout_marginLeft="@dimen/rc_attack_file_margin_left_5dp"
+        android:layout_marginRight="@dimen/rc_attack_file_margin_left_5dp"
+        android:layout_marginBottom="@dimen/rc_attack_file_margin_bottom_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/note_rc_attack_file_width"
+        android:visibility="visible">
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

@@ -2,6 +2,7 @@ package offic.htk.com.officproject.activities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -36,6 +37,7 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
     // view compnent
     private LinearLayout  lnAddPhone,lnAddEmail,lnAddIM,lnAddWebsite,lnAddAddress, mRootLayout;
     private RecyclerView rcPhone, rcEmail, rcIM, rcWebsite, rcAddress;
+    private TextView tvCustomField;
 
     // array list
     private List<Phone> mPhoneList = new ArrayList<>();
@@ -67,6 +69,8 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
 
         tvCancel = (TextView) findViewById(R.id.tv_cancel);
         tvDone = (TextView) findViewById(R.id.tv_done);
+        tvCustomField = (TextView) findViewById(R.id.tv_customfield);
+        tvCustomField.setOnClickListener(this);
         tvCancel.setOnClickListener(this);
         tvDone.setOnClickListener(this);
         //linearlayout
@@ -435,6 +439,10 @@ public class AddNewCompanyActivity extends BaseActivity implements View.OnClickL
                     focus.clearFocus();
                     hideSoftKeyboard(this);
                 }
+                break;
+            case R.id.tv_customfield:
+                Intent customfield = new Intent(this,AddCustomFieldActivity.class);
+                startActivity(customfield);
                 break;
         }
     }

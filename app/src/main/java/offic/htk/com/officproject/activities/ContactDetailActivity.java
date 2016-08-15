@@ -1,12 +1,14 @@
 package offic.htk.com.officproject.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +24,7 @@ import offic.htk.com.officproject.models.realm.Phone;
 import offic.htk.com.officproject.models.realm.Website;
 import offic.htk.com.officproject.utils.RecyclerViewDividerItemDecoration;
 
-public class ContactDetailActivity extends BaseActivity {
+public class ContactDetailActivity extends BaseActivity implements View.OnClickListener {
 
     // id of each list
     private final int PHONE_LIST_ID = 1;
@@ -30,6 +32,9 @@ public class ContactDetailActivity extends BaseActivity {
     private final int IM_LIST_ID = 3;
     private final int WEBSITE_LIST_ID = 4;
     private final int ADDRESS_LIST_ID = 5;
+
+    //linear layout
+    LinearLayout ln_navi_note, ln_navi_list_people, ln_navi_deal;
 
     // array list
     private List<Phone> mPhoneList = new ArrayList<>();
@@ -51,6 +56,15 @@ public class ContactDetailActivity extends BaseActivity {
 
     @Override
     protected void initComponents() {
+
+        // linear layout
+        ln_navi_deal = (LinearLayout) findViewById(R.id.ln_navi_deal);
+        ln_navi_list_people = (LinearLayout) findViewById(R.id.ln_navi_list_people);
+        ln_navi_note = (LinearLayout) findViewById(R.id.ln_navi_note);
+        ln_navi_deal.setOnClickListener(this);
+        ln_navi_list_people.setOnClickListener(this);
+        ln_navi_note.setOnClickListener(this);
+
         // recyclerview phone
         rcPhone = (RecyclerView) findViewById(R.id.rc_phone);
         rcPhone.setLayoutManager(new LinearLayoutManager(this));
@@ -108,8 +122,11 @@ public class ContactDetailActivity extends BaseActivity {
         mAddressList.add(address);
         mAddressAdapter = new CustomRecyclerView(this,mAddressList,ADDRESS_LIST_ID);
         rcAddress.setAdapter(mAddressAdapter);
-        mAddressAdapter.notifyDataSetChanged();
+    }
 
+    @Override
+    protected int getLayoutRescource() {
+        return R.layout.activity_contact_detail;
     }
 
     public class CustomRecyclerView extends RecyclerView.Adapter<CustomRecyclerView.CustomViewHolder> implements View.OnClickListener {
@@ -229,7 +246,17 @@ public class ContactDetailActivity extends BaseActivity {
     }
 
     @Override
-    protected int getLayoutRescource() {
-        return R.layout.activity_contact_detail;
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ln_navi_note:
+                Intent note = new Intent(this, NotesActivity.class);
+                startActivity(note);
+                break;
+            case R.id.ln_navi_list_people:
+                break;
+            case R.id.ln_navi_deal:
+                break;
+        }
+
     }
 }
