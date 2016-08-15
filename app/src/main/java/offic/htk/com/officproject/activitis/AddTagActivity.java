@@ -1,19 +1,18 @@
 package offic.htk.com.officproject.activitis;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import offic.htk.com.officproject.R;
-import offic.htk.com.officproject.TagView.OnTagClickListener;
-import offic.htk.com.officproject.TagView.OnTagDeleteListener;
-import offic.htk.com.officproject.TagView.Tag;
-import offic.htk.com.officproject.TagView.TagView;
+import offic.htk.com.officproject.tagview.OnTagClickListener;
+import offic.htk.com.officproject.tagview.OnTagDeleteListener;
+import offic.htk.com.officproject.tagview.Tag;
+import offic.htk.com.officproject.tagview.TagView;
 import offic.htk.com.officproject.base.BaseActivity;
 import offic.htk.com.officproject.utils.Utils;
 
@@ -23,6 +22,7 @@ public class AddTagActivity extends BaseActivity implements View.OnClickListener
     private TagView tagView;
     private EditText editText;
     private TextView mTvCancel, mTvDone;
+    private LinearLayout mToolbarAddTag;
 
     @Override
     protected void onCreate() {
@@ -32,8 +32,9 @@ public class AddTagActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void initComponents() {
         findViewById(R.id.ln_add_tags).setOnClickListener(this);
-        mTvCancel = (TextView) findViewById(R.id.tv_cancel_add_tags);
-        mTvDone = (TextView) findViewById(R.id.tv_done_add_tags);
+        mToolbarAddTag = (LinearLayout) findViewById(R.id.toolbar_add_tags);
+        mTvCancel = (TextView) mToolbarAddTag.findViewById(R.id.tv_cancel);
+        mTvDone = (TextView) mToolbarAddTag.findViewById(R.id.tv_done);
         mTvCancel.setOnClickListener(this);
         mTvDone.setOnClickListener(this);
         editText = (EditText) findViewById(R.id.edt_add_tags);
@@ -65,10 +66,10 @@ public class AddTagActivity extends BaseActivity implements View.OnClickListener
             case R.id.ln_add_tags:
                 addNewTag();
                 break;
-            case R.id.tv_cancel_add_tags:
+            case R.id.tv_cancel:
                 AddTagActivity.this.finish();
                 break;
-            case R.id.tv_done_add_tags:
+            case R.id.tv_done:
                 for (int i = 0; i < tagView.getChildCount(); i++) {
                     Log.d(TAG, "list tags:" + tagView.getTags().get(i).text);
                 }

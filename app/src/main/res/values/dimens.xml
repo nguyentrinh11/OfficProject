@@ -2,6 +2,10 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_top">30dp</dimen>
+    <dimen name="ln_height">60dp</dimen>
+    <dimen name="tv_text_size">15sp</dimen>
+    <dimen name="tv_text_size_mini">14sp</dimen>
 
 
     <!-- dimension Login screen -->
@@ -107,12 +111,16 @@
     <!-- dimension fragment profile -->
     <dimen name="ln_info_avatar">200dp</dimen>
     <dimen name="img_avatar_width_height">100dp</dimen>
+    <dimen name="ln_language_width_height">80dp</dimen>
+    <dimen name="img_back_height">15dp</dimen>
+    <dimen name="ln_item_language_width_height">40dp</dimen>
     <dimen name="tv_user_name_margin_top">15dp</dimen>
     <dimen name="tv_user_name_text_size">17sp</dimen>
-    <dimen name="ln_infomation_height">200dp</dimen>
+    <dimen name="ln_infomation_height">210dp</dimen>
     <dimen name="img_avatar_margin_top">30dp</dimen>
     <dimen name="fragment_profile_text_size">15sp</dimen>
     <dimen name="fragment_profile_view_margin_left">10dp</dimen>
+    <dimen name="fragment_profile_view_margin_top">50dp</dimen>
     <dimen name="fragment_profile_ln_margin">15dp</dimen>
     <dimen name="fragment_profile_tv_text_size">14sp</dimen>
     <dimen name="tag_view_item_height">30dp</dimen>
@@ -153,4 +161,13 @@
     <dimen name="ln_alphabet_margin_top">120dp</dimen>
     <dimen name="add_contacts_margin_top_15dp">15dp</dimen>
     <dimen name="add_contacts_text_size_larger_15sp">15sp</dimen>
+
+
+    <!-- activity sync contacts -->
+    <dimen name="activity_sync_contacts">50dp</dimen>
+    <dimen name="ln_switch_sync_contacts_margin">30dp</dimen>
+    <dimen name="tv_cancel_dialog_margin">20dp</dimen>
+    <dimen name="tv_sync_margin">15dp</dimen>
+    <dimen name="tv_language_text_size">12sp</dimen>
+    <dimen name="tv_margin_left">25dp</dimen>
 </resources>

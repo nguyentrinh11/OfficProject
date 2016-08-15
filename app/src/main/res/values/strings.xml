@@ -11,6 +11,15 @@
     <string name="font_open_san_semibold">OpenSans-Semibold.ttf</string>
     <string name="font_open_san_light">OpenSans-Light.ttf</string>
 
+    <!-- Title Fragment-->
+    <string name="title_contacts">All Contacts</string>
+    <string name="title_my_info">My Info</string>
+    <string name="title_users">Users</string>
+    <string name="title_tags">Tags</string>
+    <string name="title_groups">Groups</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_switch_company">Switch company</string>
+
     <!-- Screen Login-->
     <string name="login_edt_username">Username/Email</string>
     <string name="login_edt_password">Password</string>
@@ -123,6 +132,8 @@
     <string name="activity_edit_profile_text_password">Password</string>
     <string name="activity_edit_profile_text_confirm_pass">Confirm password</string>
     <string name="add_new_company_name">Name</string>
+    <string name="sync_contacts_dialog">\"Offic\" would like to access your contacts</string>
+    <string name="tv_title_sync_contacts">Synchronise Contacts</string>
 
 
 </resources>

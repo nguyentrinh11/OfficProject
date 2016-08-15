@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contact_swip_background"
+    android:orientation="vertical"
+    tools:context="offic.htk.com.officproject.activitis.SettingsLanguageActivity">
+
+    <include
+        android:id="@+id/toolbar_language"
+        layout="@layout/toolbar_details" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/ln_switch_sync_contacts_margin"
+        android:background="#BDBDBD" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_settings_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/while_background">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

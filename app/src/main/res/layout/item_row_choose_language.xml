@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_sync_contacts">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:id="@+id/tv_type_name_language"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/tv_sync_margin"
+                android:layout_marginStart="@dimen/tv_sync_margin"
+                android:layout_weight="1"
+                android:text="English"
+                android:textSize="16sp"
+                font:font="@string/font_helveticaneue_medium" />
+
+            <offic.htk.com.officproject.views.CustomFontTextView
+                android:id="@+id/tv_title_language"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/tv_sync_margin"
+                android:layout_marginStart="@dimen/tv_sync_margin"
+                android:layout_weight="1"
+                android:text="English"
+                android:textSize="@dimen/tv_language_text_size"
+                font:font="@string/font_helveticaneue" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/img_choose_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:src="@drawable/ic_choose_type" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/view_margin_left"
+        android:layout_marginStart="@dimen/tv_sync_margin"
+        android:background="#BDBDBD" />
+</LinearLayout>

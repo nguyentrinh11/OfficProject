@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activitis.EditGroupActivity">
+
+    <include
+        android:id="@+id/toolbar_group_detail"
+        layout="@layout/toolbar_details" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:background="#BDBDBD" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ln_height"
+        android:layout_gravity="center"
+        android:background="@color/while_background"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_name_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/tv_sync_margin"
+            android:layout_marginStart="@dimen/tv_sync_margin"
+            android:gravity="center|left"
+            android:text="Leaders-HTK"
+            android:textSize="@dimen/tv_text_size"
+            font:font="@string/font_helveticaneue_medium" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD" />
+
+    <offic.htk.com.officproject.views.CustomFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tv_sync_margin"
+        android:layout_marginStart="@dimen/tv_sync_margin"
+        android:layout_marginTop="@dimen/margin_top"
+        android:text="MEMBERS:"
+        android:textSize="@dimen/tv_text_size_mini"
+        font:font="@string/font_helveticaneue_light" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/view_margin_left"
+        android:background="#BDBDBD" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/while_background">
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:id="@+id/tv_members_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/tv_cancel_dialog_margin"
+            android:layout_marginLeft="@dimen/tv_sync_margin"
+            android:layout_marginRight="@dimen/tv_sync_margin"
+            android:layout_marginTop="@dimen/tv_cancel_dialog_margin"
+            android:text="Loi Ngo, Phuong Vu, Doan Van, Huy Do, Hue Tran, Van Thanh, Ngoc Tuan"
+            android:textSize="@dimen/tv_text_size"
+            font:font="@string/font_helveticaneue" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD" />
+</LinearLayout>

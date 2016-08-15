@@ -126,7 +126,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
                 switch (position) {
                     case 1:
                         replaceFragment(R.id.main_list, new FragmentProfile(), false);
-                        tvDetails.setText("Details User");
+                        tvDetails.setText(R.string.title_my_info);
                         parent.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorAccent));
                         for (int i = 2; i < 9; i++) {
                             parent.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.navigation_bg_listview));
@@ -136,7 +136,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
                         break;
                     case 2:
                         replaceFragment(R.id.main_list, new FragmentContacts(), false);
-                        tvDetails.setText("All Contacts");
+                        tvDetails.setText(R.string.title_contacts);
                         parent.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.navigation_bg_item_avatar));
                         parent.getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorAccent));
                         for (int i = 3; i < 9; i++) {
@@ -146,7 +146,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
                         break;
                     case 3:
                         replaceFragment(R.id.main_list, new FragmentUsers(), false);
-                        tvDetails.setText("Users");
+                        tvDetails.setText(R.string.title_users);
                         parent.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.navigation_bg_item_avatar));
                         parent.getChildAt(2).setBackgroundColor(getResources().getColor(R.color.navigation_bg_listview));
                         parent.getChildAt(3).setBackgroundColor(getResources().getColor(R.color.colorAccent));
@@ -157,7 +157,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
                         break;
                     case 4:
                         replaceFragment(R.id.main_list, new FragmentTags(), false);
-                        tvDetails.setText("Tags");
+                        tvDetails.setText(R.string.title_tags);
                         parent.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.navigation_bg_item_avatar));
                         for (int i = 2; i < 4; i++) {
                             parent.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.navigation_bg_listview));
@@ -170,7 +170,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
                         break;
                     case 5:
                         replaceFragment(R.id.main_list, new FragmentGroups(), false);
-                        tvDetails.setText("Groups");
+                        tvDetails.setText(R.string.title_groups);
                         parent.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.navigation_bg_item_avatar));
                         for (int i = 2; i < 5; i++) {
                             parent.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.navigation_bg_listview));
@@ -183,7 +183,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
                         break;
                     case 6:
                         replaceFragment(R.id.main_list, new FragmentSettings(), false);
-                        tvDetails.setText("Settings");
+                        tvDetails.setText(R.string.title_settings);
                         parent.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.navigation_bg_item_avatar));
                         for (int i = 2; i < 6; i++) {
                             parent.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.navigation_bg_listview));
@@ -196,7 +196,7 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
                         break;
                     case 7:
                         startActivity(new Intent(MainActivity.this, SplashActivity.class));
-                        tvDetails.setText("Swich company");
+                        tvDetails.setText(R.string.title_switch_company);
                         parent.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.navigation_bg_item_avatar));
                         for (int i = 2; i < 7; i++) {
                             parent.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.navigation_bg_listview));
@@ -220,7 +220,6 @@ public class MainActivity extends BaseActivity implements SlidingPaneLayout.Pane
         });
 
     }
-
 
 
     @Override

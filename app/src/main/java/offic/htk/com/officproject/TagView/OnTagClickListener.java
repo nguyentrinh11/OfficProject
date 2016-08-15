@@ -1,4 +1,4 @@
-package offic.htk.com.officproject.TagView;
+package offic.htk.com.officproject.tagview;
 
 /**
  * listener for tag delete

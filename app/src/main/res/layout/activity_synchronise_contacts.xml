@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_sync_contacts"
+        layout="@layout/toolbar_details" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_sync_contacts"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/ln_switch_sync_contacts_margin"
+        android:background="@drawable/custom_edit_text"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <offic.htk.com.officproject.views.CustomFontTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/ln_switch_sync_contacts_margin"
+            android:layout_marginStart="@dimen/ln_switch_sync_contacts_margin"
+            android:layout_weight="2"
+            android:text="@string/tv_title_sync_contacts"
+            android:textSize="@dimen/toolbar_tv_text_size"
+            font:font="@string/font_helveticaneue" />
+
+        <Switch
+            android:id="@+id/switch_sync_contacts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/ln_switch_sync_contacts_margin"
+            android:layout_marginRight="@dimen/ln_switch_sync_contacts_margin"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

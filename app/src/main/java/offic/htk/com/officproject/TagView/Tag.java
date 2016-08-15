@@ -1,4 +1,4 @@
-package offic.htk.com.officproject.TagView;
+package offic.htk.com.officproject.tagview;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;

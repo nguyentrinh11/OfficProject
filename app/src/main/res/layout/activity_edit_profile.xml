@@ -7,49 +7,9 @@
     android:orientation="vertical"
     tools:context="offic.htk.com.officproject.activitis.EditProfileActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/fm_toolbar"
-        android:background="#f44336">
-
-        <offic.htk.com.officproject.views.CustomFontTextView
-            android:id="@+id/tv_cancel_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            android:layout_marginLeft="@dimen/tv_cancel_profile_margin"
-            android:layout_marginStart="@dimen/tv_cancel_profile_margin"
-            android:gravity="center"
-            android:text="@string/sign_up_tv_cancel"
-            android:textColor="#FAFAFA"
-            android:textSize="@dimen/tv_activity_edit_profile_text_size"
-            font:font="@string/font_helveticaneue" />
-
-        <offic.htk.com.officproject.views.CustomFontTextView
-            android:id="@+id/tv_title_edit_profile"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/tv_title_edit_profile"
-            android:textColor="#FAFAFA"
-            android:textSize="@dimen/tv_activity_edit_profile_text_size"
-            android:textStyle="bold"
-            font:font="@string/font_helveticaneue" />
-
-        <offic.htk.com.officproject.views.CustomFontTextView
-            android:id="@+id/tv_done_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:layout_marginEnd="@dimen/tv_cancel_profile_margin"
-            android:layout_marginRight="@dimen/tv_cancel_profile_margin"
-            android:gravity="center"
-            android:text="@string/tv_done_profile"
-            android:textColor="#FAFAFA"
-            android:textSize="@dimen/tv_activity_edit_profile_text_size"
-            font:font="@string/font_helveticaneue" />
-    </FrameLayout>
+    <include
+        android:id="@+id/toolbar_edit_profile"
+        layout="@layout/toolbar_basic" />
 
     <LinearLayout
         android:layout_width="match_parent"
